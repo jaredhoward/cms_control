@@ -1,0 +1,15 @@
+<% form_for [:admin, @cms_page] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :show_in_menu %><br />
+    <%= f.check_box :show_in_menu %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
