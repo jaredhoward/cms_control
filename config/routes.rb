@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
+    admin.resources :categories
+    admin.resources :cms_blocks
     admin.resources :cms_pages
   end
 

@@ -2,9 +2,9 @@ class CreateCategories < ActiveRecord::Migration
   def self.up
     create_table :categories do |t|
       t.timestamps
-      t.string :type, :name
+      t.string :category_type, :name
 
-      t.index :type
+      t.index :category_type
       t.index :name
     end
   end

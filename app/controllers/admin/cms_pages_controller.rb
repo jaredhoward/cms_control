@@ -12,7 +12,7 @@ class Admin::CmsPagesController < ApplicationController
   def create
     @cms_page = CmsPage.new(params[:cms_page])
     if @cms_page.save
-      redirect_to(@cms_page, :notice => 'Page was successfully created.')
+      redirect_to([:admin, @cms_page], :notice => 'Page was successfully created.')
     else
       render :new
     end
@@ -25,8 +25,8 @@ class Admin::CmsPagesController < ApplicationController
   end
 
   def update
-    if @cms_page.update_attributes(params[:page])
-      redirect_to(@cms_page, :notice => 'Page was successfully updated.')
+    if @cms_page.update_attributes(params[:cms_page])
+      redirect_to([:admin, @cms_page], :notice => 'Page was successfully updated.')
     else
       render :edit
     end
