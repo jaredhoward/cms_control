@@ -5,3 +5,10 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+page = CmsPage.create(:status => 'draft', :show_in_menu => true)
+page.cms_meta = CmsMeta.create(:url => 'home', 'title' => 'Main Pine', :description => 'default description', :keywords => 'default keywords', :metaable => page)
+page.cms_meta.current_cms_content = CmsContent.create(:contentable => page.cms_meta, :content => 'Hello World!')
+page.cms_meta.current_cms_content.save
+page.cms_meta.save
+page.save

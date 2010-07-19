@@ -4,11 +4,14 @@ class CreateCmsContents < ActiveRecord::Migration
       t.datetime :created_at
       t.string :contentable_type
       t.integer :contentable_id
-      t.longtext :content
+      t.text :content
 
       t.index :created_at
       t.index [:contentable_type, :contentable_id]
     end
+    
+    execute "ALTER TABLE `cms_contents` CHANGE COLUMN `content` `content` longtext"
+    
   end
 
   def self.down
