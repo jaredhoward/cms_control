@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716161238) do
+ActiveRecord::Schema.define(:version => 20100716163541) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100716161238) do
     t.datetime "created_at"
     t.string   "contentable_type"
     t.integer  "contentable_id"
+    t.text     "content",          :limit => 2147483647
   end
 
   create_table "cms_metas", :force => true do |t|
@@ -56,10 +57,16 @@ ActiveRecord::Schema.define(:version => 20100716161238) do
     t.boolean  "show_in_menu"
   end
 
-  create_table "products", :force => true do |t|
+  create_table "file_resource_attributes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "group"
     t.string   "name"
+  end
+
+  create_table "file_resource_version_attributes", :force => true do |t|
+    t.integer "file_resource_version_id"
+    t.integer "file_resource_attribute_id"
   end
 
   create_table "file_resource_versions", :force => true do |t|
@@ -70,6 +77,20 @@ ActiveRecord::Schema.define(:version => 20100716161238) do
   end
 
   create_table "file_resources", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "product_file_resources", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "product_id"
+    t.integer  "file_resource_id"
+    t.integer  "category_id"
+  end
+
+  create_table "products", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"

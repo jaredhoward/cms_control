@@ -6,4 +6,8 @@ class FileResourceVersion < ActiveRecord::Base
 
   validates_presence_of :file_resource_id, :name
   validates_uniqueness_of :name
+
+  def is_showable()
+    return true
+  end
 end
