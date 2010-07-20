@@ -12,22 +12,28 @@ class CmsPage < ActiveRecord::Base
   validates_presence_of :status
   validates_inclusion_of :status, :in => STATUSES, :allow_nil => true
 
+  before_validation_on_create :associate_cms_meta_metaable_to_self
+
   def is_showable
     return true
   end
 
 protected
 
-  def after_initialize
-    build_cms_meta
-  end
+  # def after_initialize
+  #   build_cms_meta
+  # end
 
 private
 
-  def build_cms_meta
-    meta = CmsMeta.new
-    meta.metaable = self
-    self.cms_meta = meta
+  def associate_cms_meta_metaable_to_self
+    self.cms_meta.metaable = self if self.cms_meta.metaable.nil?
   end
+
+  # def build_cms_meta
+  #   meta = CmsMeta.new
+  #   meta.metaable = self
+  #   self.cms_meta = meta
+  # end
 
 end
