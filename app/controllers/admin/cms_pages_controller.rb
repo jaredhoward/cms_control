@@ -7,6 +7,8 @@ class Admin::CmsPagesController < ApplicationController
 
   def new
     @cms_page = CmsPage.new
+    # meta = CmsMeta.new(:metaable => @cms_page)
+    # @cms
   end
 
   def create
