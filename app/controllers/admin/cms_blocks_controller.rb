@@ -7,6 +7,7 @@ class Admin::CmsBlocksController < ApplicationController
 
   def new
     @cms_block = CmsBlock.new
+    1.times { @cms_block.cms_contents.build }
   end
 
   def create
