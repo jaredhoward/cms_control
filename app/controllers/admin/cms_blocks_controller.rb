@@ -1,4 +1,4 @@
-class Admin::CmsBlocksController < ApplicationController
+class Admin::CmsBlocksController < Admin::BaseController
   before_filter :load_cms_block, :only => [:show, :edit, :update, :destroy]
 
   def index
