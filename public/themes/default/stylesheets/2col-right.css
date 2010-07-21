@@ -10,7 +10,7 @@ img { border: none; }
 .main .col-main .content-footer { background: transparent url(../images/main_br.gif) 100% 100% no-repeat; border-left:1px solid #004563; }
 .main .col-right { width: ; float: right; }
 .col-main h1 {
-  background: url("/images/main_head.gif") no-repeat scroll left top transparent;
+  background: transparent url(../images/main_head.gif) 0 0 no-repeat;
   border-right: 1px solid #004563;
   color: #003366;
   font-size: 10pt;
