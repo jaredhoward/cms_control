@@ -1,4 +1,13 @@
 <% content_for :meta_description do %>
 <%= @description %>
 <% end %>
+
+<% content_for :page_header do %>
+Introducing:  IQ Express - the world's smallest multi-port fax board
+<% end %>
+
+<% content_for :col_right do %>
+  <%= cms_block('iq_express_information') %>
+<% end %>
+
 <%= @content %>

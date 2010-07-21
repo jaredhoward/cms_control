@@ -5,6 +5,7 @@ class CreateCmsContents < ActiveRecord::Migration
       t.string :contentable_type
       t.integer :contentable_id
       t.text :content
+      t.string :title
 
       t.index :created_at
       t.index [:contentable_type, :contentable_id]
