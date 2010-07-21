@@ -8,6 +8,8 @@
   <meta name="description" content="<%= content_for :meta_description %>" />
   <meta name="keywords" content="<%= content_for :meta_keywords %>" />
   <meta name="robots" content="INDEX,FOLLOW" />
+  <%= stylesheet_link_tag("2col-right") %>
+  
 </head>
 <body>
 
@@ -15,18 +17,22 @@
 
     <div class="page">
       <div class="header">
-        <h2 class="logo">MainPine</h2>
+        <a href="/"><h2 class="logo">MainPine</h2></a>
         <div class="top-nav">
           <%= yield :nav_top %>
         </div>
       </div>
       
       <div class="main">
+        <div class="col-main">
+          <h1><%= yield :page_header %></h1>
+          <div class="content">
+          <%= yield %>
+          </div>
+          <div class="content-footer">&nbsp;</div>
+        </div>
         <div class="col-right">
           <%= yield :col_right%>
-        </div>
-        <div class="main-col">
-          <%= yield %>
         </div>
       </div>
 
@@ -36,9 +42,10 @@
         </div>
       </div>
 
-
+      <div class="clearer"></div>
     </div>
     <!-- END PAGE -->
+    <div class="clearer"></div>
   </div>
   <!-- END WRAPPER -->
 

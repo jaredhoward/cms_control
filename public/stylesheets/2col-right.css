@@ -1,0 +1,20 @@
+body { margin: 0; padding: 0; }
+img { border: none; }
+.clearer { clear: both; }
+
+.page { padding: 15px; width: 770px; background: transparent url(../images/main_bg.jpg) 0 0 no-repeat; }
+.header {  }
+.header h2.logo { width: 153px; height: 55px; background: transparent url(../images/logo.gif) 0 0 no-repeat; text-indent: -99999px; margin: 0; padding: 0; }
+.main .col-main { width: 470px; float: left; }
+.main .col-main .content { border-left:1px solid #004563; border-right:1px solid #004563; margin: 0; padding: 15px; }
+.main .col-main .content-footer { background: transparent url(../images/main_br.gif) 100% 100% no-repeat; border-left:1px solid #004563; }
+.main .col-right { width: ; float: right; }
+.col-main h1 {
+  background: url("/images/main_head.gif") no-repeat scroll left top transparent;
+  border-right: 1px solid #004563;
+  color: #003366;
+  font-size: 10pt;
+  height: 33px;
+  margin: 0;
+  padding: 7px 0 0 16px;
+}
