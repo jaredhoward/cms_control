@@ -1,0 +1,19 @@
+<p>
+  <b>URL:</b>
+  <%=h p.cms_meta.url %>
+</p>
+<p>
+  <b>Title:</b>
+  <%=h p.cms_meta.title %>
+</p>
+<p>
+  <b>Description:</b>
+  <%=h p.cms_meta.description %>
+</p>
+<p>
+  <b>Keywords:</b>
+  <%=h p.cms_meta.keywords %>
+</p>
+<% p.cms_meta.cms_contents.each do |cms_content| -%>
+  <%= render 'admin/cms_contents/show_fields', :cms_content => cms_content %>
+<% end -%>

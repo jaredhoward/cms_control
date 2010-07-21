@@ -7,6 +7,8 @@ class Admin::CmsPagesController < ApplicationController
 
   def new
     @cms_page = CmsPage.new
+    @cms_page.build_cms_meta
+    1.times { @cms_page.cms_meta.cms_contents.build }
   end
 
   def create

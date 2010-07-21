@@ -1,0 +1,19 @@
+<p>
+  <%= f.label :url %><br />
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.label :title %><br />
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :description %><br />
+  <%= f.text_field :description %>
+</p>
+<p>
+  <%= f.label :keywords %><br />
+  <%= f.text_field :keywords %>
+</p>
+<% f.fields_for :cms_contents do |builder| -%>
+  <%= render 'admin/cms_contents/form_fields', :f => builder %>
+<% end -%>

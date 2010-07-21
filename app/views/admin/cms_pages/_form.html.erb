@@ -9,8 +9,8 @@
     <%= f.label :show_in_menu %><br />
     <%= f.check_box :show_in_menu %>
   </p>
-<% f.fields_for (@cms_page.new_record? ? :cms_meta_attributes : :cms_meta) do |builder| %>
-  <%= render 'admin/cms_meta/form_fields', :f => builder %>
+<% f.fields_for :cms_meta do |builder| %>
+  <%= render 'admin/cms_metas/form_fields', :f => builder %>
 <% end %>
   <p>
     <%= f.submit %>
