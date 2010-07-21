@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
     t.string   "contentable_type"
     t.integer  "contentable_id"
     t.text     "content",          :limit => 2147483647
+    t.string   "title"
   end
 
   create_table "cms_metas", :force => true do |t|
