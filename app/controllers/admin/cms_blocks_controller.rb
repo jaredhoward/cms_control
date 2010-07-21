@@ -1,4 +1,4 @@
-class Admin::CmsBlocksController < ApplicationController
+class Admin::CmsBlocksController < Admin::BaseController
   before_filter :load_cms_block, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -7,6 +7,7 @@ class Admin::CmsBlocksController < ApplicationController
 
   def new
     @cms_block = CmsBlock.new
+    1.times { @cms_block.cms_contents.build }
   end
 
   def create

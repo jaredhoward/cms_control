@@ -1,4 +1,4 @@
-class Admin::CmsPagesController < ApplicationController
+class Admin::CmsPagesController < Admin::BaseController
   before_filter :load_cms_page, :only => [:show, :edit, :update, :destroy]
 
   def index

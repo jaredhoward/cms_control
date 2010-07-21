@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
-    t.integer  "sort"
+    t.integer  "sort",         :default => 0, :null => false
     t.boolean  "show_in_menu"
   end
 

@@ -3,7 +3,7 @@ class CreateCmsPages < ActiveRecord::Migration
     create_table :cms_pages do |t|
       t.timestamps
       t.string :status
-      t.integer :sort
+      t.integer :sort, :default => 0, :null => false
       t.boolean :show_in_menu
 
       t.index :status
