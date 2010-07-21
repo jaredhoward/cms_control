@@ -4,6 +4,7 @@ class CmsController < ApplicationController
   def index
    metaable = CmsMeta.get_current(params[:url])
    if metaable
+     @content_title = metaable.current_cms_content.title
      @content = metaable.current_cms_content.content
      @title = metaable.title
      @keywords = metaable.keywords

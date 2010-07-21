@@ -10,4 +10,13 @@
   <%= cms_block('iq_express_information') %>
 <% end %>
 
+<% content_for :nav_top do %>
+<ul>
+  <li class="first active"><a href="/">Home</a></li>
+  <li class=""><a href="#">Nav Item</a></li>
+  <li class=""><a href="#">Nav Item</a></li>
+  <li class=""><a href="#">Nav Item</a></li>
+</ul>
+<% end %>
+
 <%= @content %>
