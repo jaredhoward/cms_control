@@ -9,5 +9,5 @@ ActionController::Routing::Routes.draw do |map|
   # CMS Controller
   CmsMeta.all.each do |cms|
     map.connect cms.url, :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
-  end
+  end if CmsMeta.table_exists?
 end

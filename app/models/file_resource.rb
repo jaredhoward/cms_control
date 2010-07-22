@@ -1,4 +1,4 @@
-def FileResource < ActiveRecord::Base
+class FileResource < ActiveRecord::Base
   include CommonRouteReload
 
   has_one :cms_meta, :as => :metaable, :dependent => :destroy

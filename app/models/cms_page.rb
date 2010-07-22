@@ -22,20 +22,10 @@ class CmsPage < ActiveRecord::Base
 
 protected
 
-  # def after_initialize
-  #   build_cms_meta
-  # end
-
 private
 
   def associate_cms_meta_metaable_to_self
     self.cms_meta.metaable = self if self.cms_meta.metaable.nil?
   end
-
-  # def build_cms_meta
-  #   meta = CmsMeta.new
-  #   meta.metaable = self
-  #   self.cms_meta = meta
-  # end
 
 end
