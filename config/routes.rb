@@ -7,5 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   # CMS Controller
-  map.connect ':url', :controller => 'cms', :action => 'index', :defaults => {:url => 'home'}
+  CmsMeta.all.each do |cms|
+    map.connect cms.url, :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
+  end
 end

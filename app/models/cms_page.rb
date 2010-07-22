@@ -15,7 +15,7 @@ class CmsPage < ActiveRecord::Base
   before_validation_on_create :associate_cms_meta_metaable_to_self
 
   def is_showable
-    return true
+    return self.status == 'published'
   end
 
 protected

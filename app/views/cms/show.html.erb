@@ -11,11 +11,10 @@
 <% end %>
 
 <% content_for :nav_top do %>
-<ul>
-  <li class="first active"><a href="/">Home</a></li>
-  <li class=""><a href="#">Nav Item</a></li>
-  <li class=""><a href="#">Nav Item</a></li>
-  <li class=""><a href="#">Nav Item</a></li>
+<ul class="nav-top">
+  <% build_top_nav().each do |li| %>
+    <li<%= ' class="'+li[:classes].join(' ')+'"' unless li[:classes].blank? %>><a href="<%= li[:url] %>"><%= li[:title] %></a></li>
+  <% end %>
 </ul>
 <% end %>
 
