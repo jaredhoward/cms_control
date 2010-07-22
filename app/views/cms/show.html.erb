@@ -1,0 +1,21 @@
+<% content_for :meta_description do %>
+<%= @description %>
+<% end %>
+
+<% content_for :page_header do %>
+<%= @content_title %>
+<% end %>
+
+<% content_for :col_right do %>
+  <%= cms_block('iq_express_information') %>
+<% end %>
+
+<% content_for :nav_top do %>
+<ul class="nav-top">
+  <% build_top_nav().each do |li| %>
+    <li<%= ' class="'+li[:classes].join(' ')+'"' unless li[:classes].blank? %>><a href="<%= li[:url] %>"><%= li[:title] %></a></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= @content %>

@@ -1,18 +1,15 @@
 class CmsController < ApplicationController
   layout '2col-right'
   
-  def index
-   metaable = CmsMeta.get_current(params[:url])
-   if metaable
-     @content = metaable.current_cms_content.content
-     @title = metaable.title
-     @keywords = metaable.keywords
-     @description = metaable.description
-   else
-    # return 404
-    @content = 'PAGE NOT FOUND'
-   end
-
+  def show
+    meta = CmsMeta.find(params[:id])
+    if meta && meta.metaable.is_showable
+      @content_title = meta.current_cms_content.title
+      @content = meta.current_cms_content.content
+      @title = meta.title
+      @keywords = meta.keywords
+      @description = meta.description
+    end
   end
 
 end
