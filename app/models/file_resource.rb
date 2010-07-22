@@ -1,4 +1,6 @@
 def FileResource < ActiveRecord::Base
+  include CommonRouteReload
+
   has_one :cms_meta, :as => :metaable, :dependent => :destroy
   has_many :file_resource_versions, :dependent => :destroy
   has_many :product_file_resources, :dependent => :destroy

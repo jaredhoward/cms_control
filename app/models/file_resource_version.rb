@@ -1,4 +1,6 @@
 class FileResourceVersion < ActiveRecord::Base
+  include CommonRouteReload
+
   belongs_to :file_resource
   has_one :cms_meta, :as => :metaable, :dependent => :destroy
   has_many :file_resource_version_attributes, :dependent => :destroy

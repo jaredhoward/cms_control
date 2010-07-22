@@ -1,0 +1,16 @@
+<h3>Content Revisions</h3>
+<ul class="cms_contents_area">
+<% f.object.cms_contents.each do |cms_content| -%>
+  <% is_current = f.object.current_cms_content == cms_content %>
+  <li class="cms_content_area<%= ' active_cms_content_area' if is_current %>">
+    <%= cms_content.created_at %> <%= cms_content.title %>
+    <div class="cms_content_form_area">
+      <% f.fields_for :cms_contents do |builder| -%>
+        <%= builder.hidden_field(:_destroy, :class => 'hidden_destroy') %>
+        <%= render 'admin/cms_contents/form_fields', :f => builder %>
+      <% end -%>
+    </div>
+    <%= link_to_function 'remove', 'remove_fields(this)' %>
+  </li>
+<% end -%>
+</ul>

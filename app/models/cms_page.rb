@@ -1,4 +1,6 @@
 class CmsPage < ActiveRecord::Base
+  include CommonRouteReload
+
   STATUSES = ['draft','published']
 
   has_one :cms_meta, :as => :metaable, :dependent => :destroy

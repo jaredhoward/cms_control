@@ -1,5 +1,6 @@
 class CmsMeta < ActiveRecord::Base
   include CommonContentable
+  include CommonRouteReload
 
   belongs_to :metaable, :polymorphic => true
 
