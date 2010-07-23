@@ -1015,21 +1015,6 @@ block_legal_more_information = CmsBlock.create({
   ]
 })
 
-block_whyv34_more_information = CmsBlock.create({
-  :title => '(WhyV34) More Information',
-  :cms_contents_attributes => [
-    {
-      :status => 'published',
-      :title => 'More Information',
-      :content => '<ul>
-  <li><a href="applications.html">Other applications</a></li>
-  <li><a href="products.html">Products</a></li>
-  <li><a href="sales.html">How to buy</a></li>
-</ul>'
-    }
-  ]
-})
-
 block_whyv34_in_this_document = CmsBlock.create({
   :title => '(WhyV34) In this document',
   :cms_contents_attributes => [
@@ -1114,7 +1099,7 @@ page_contact.cms_blocks << block_contact_more_information
 
 page_legal.cms_blocks << block_legal_more_information
 
-page_whyv34.cms_blocks << block_whyv34_more_information
+page_whyv34.cms_blocks << block_default
 page_whyv34.cms_blocks << block_whyv34_in_this_document
 
 page_software.cms_blocks << block_software_more_information

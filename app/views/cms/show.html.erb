@@ -1,14 +1,6 @@
-<% content_for :meta_description do %>
-<%= @description %>
-<% end %>
-
-<% content_for :page_header do %>
-<%= @content_title %>
-<% end %>
-
-<% content_for :col_right do %>
-  <%= cms_block('iq_express_information') %>
-<% end %>
+<% content_for(:meta_description, @description) %>
+<% content_for(:page_header, @content_title) %>
+<% content_for(:col_right, cms_blocks(@meta.metaable)) if @meta.metaable.is_a?(CmsPage) %>
 
 <% content_for :nav_top do %>
 <ul class="nav-top">

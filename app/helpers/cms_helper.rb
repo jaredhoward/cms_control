@@ -1,7 +1,16 @@
 module CmsHelper
 
-  def cms_block(block_id)
-    return "got #{block_id}"
+  def cms_blocks(cms_page)
+    content = String.new
+    blocks = cms_page.cms_blocks.empty? ? [CmsBlock.first] : cms_page.cms_blocks
+    blocks.each do |block|
+      content << cms_block(block)
+    end
+    return content
+  end
+
+  def cms_block(cms_block)
+    return content_tag(:h3, cms_block.current_cms_content.title) + cms_block.current_cms_content.content.html_safe
   end
 
   def build_top_nav()
