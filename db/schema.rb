@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
     t.datetime "created_at"
     t.string   "contentable_type"
     t.integer  "contentable_id"
-    t.text     "content",          :limit => 2147483647
+    t.string   "status"
     t.string   "title"
+    t.text     "content",          :limit => 2147483647
   end
 
   create_table "cms_metas", :force => true do |t|

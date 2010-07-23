@@ -27,6 +27,8 @@ class Admin::CmsPagesController < Admin::BaseController
   end
 
   def update
+    # cms_content = params[:cms_page][:cms_meta_attributes][:cms_content].dup
+    # params[:cms_page][:cms_meta_attributes].delete(:cms_content)
     if @cms_page.update_attributes(params[:cms_page])
       redirect_to([:admin, @cms_page], :notice => 'Page was successfully updated.')
     else
