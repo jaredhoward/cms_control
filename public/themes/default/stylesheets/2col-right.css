@@ -7,14 +7,18 @@ a:hover { color: #0033ee; }
 .wrapper { color:#333333; font-family:Tahoma,Geneva,Arial,Helvetica,sans-serif; font-size: 8pt; line-height: 13pt; }
 .page { padding: 0 25px; width: 770px; background: transparent url(../images/main_bg.jpg) 0 0 no-repeat; }
 .header { position: relative; margin-bottom: 35px; }
-.header h2.logo { width: 153px; height: 55px; background: transparent url(../images/logo.gif) 0 0 no-repeat; text-indent: -99999px; margin: 0; padding: 0; }
+.header h2.logo a { display: block; width: 153px; height: 55px; background: transparent url(../images/logo.gif) 0 0 no-repeat; text-indent: -99999px; margin: 0; padding: 0; }
+
 .main .col-main { width: 470px; float: left; margin-left: 20px; }
-.main .col-main .content { border-left:1px solid #004563; border-right:1px solid #004563; margin: 0; }
+.main .col-main .content { border-left:1px solid #004563; border-right:1px solid #004563; margin: 0; padding: 0 15px 15px 15px; }
+/*.main .col-main .content * { margin-left: 15px; margin-right: 15px; }*/
+
+
 .main .col-main .content-footer { background: transparent url(../images/main_br.gif) 100% 100% no-repeat; border-left:1px solid #004563; }
-.main .col-right { width: ; float: right; }
-.main .col-main .content p { padding: 6px 15px; }
-.col-main h1 { background: transparent url(../images/main_head.gif) 0 0 no-repeat; border-right: 1px solid #004563; color: #003366; font-size: 10pt; height: 33px; margin: 0; padding: 4px 0 0 16px; }
-.col-main .content h2 { background: transparent url(../images/main_subhead.gif) 0 0 no-repeat; color: #003366; font-size: 10pt; height: 33px; margin: 0; padding: 4px 0 0 16px; }
+.main .col-right { width: 275px; float: right; }
+.main .col-main .content p { margin-top: 0; margin-bottom: 6px; }
+.main .col-main h1 { background: transparent url(../images/main_head.gif) 0 0 no-repeat; border-right: 1px solid #004563; color: #003366; font-size: 10pt; height: 33px; margin: 0; padding: 4px 0 0 16px; }
+.main .col-main .content h2 { width: 453px; background: transparent url(../images/main_subhead.gif) 0 0 no-repeat; color: #003366; font-size: 10pt; height: 33px; padding: 4px 0 0 15px; margin-left: -15px; margin-right: 0px; margin-bottom: 6px; }
 
 .top-nav { position: absolute; top: 56px; left: 22px; }
 .top-nav ul { list-style: none outside none; margin: 0; padding: 0; }

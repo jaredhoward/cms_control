@@ -8,9 +8,9 @@ module CmsHelper
     nav = Array.new
     pages = CmsPage.published.active_menu
     pages.each do |page|
-      page_url = url_for(:controller => 'cms', :action => 'show', :id => page.cms_meta.id)
+      page_url = page.cms_meta.url == 'home' ? root_url : url_for(:controller => 'cms', :action => 'show', :id => page.cms_meta.id, :format => 'html')
       current_nav = {
-        :title => page.cms_meta.title,
+        :title => page.menu_title,
         :url => page_url,
         :classes => []
       }

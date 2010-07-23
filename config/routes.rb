@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # CMS Dynamic Routes
   CmsMeta.all.each do |cms|
-    map.connect cms.url, :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
+    map.connect "#{cms.url}.:format", :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
   end if CmsMeta.table_exists?
 
   map.root :controller => 'cms', :action => 'show'
