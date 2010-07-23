@@ -607,3 +607,293 @@ CmsPage.create({
     ]
   },
 })
+
+CmsBlock.create({
+  :title => '(Default) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="applications.html">Other applications</a></li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="sales.html">How to buy</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Home) IQ Express Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'IQ Express Information',
+      :content => '<ul>
+  <li>IQ Express Datasheet, format: <a href="downloads/Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf">Letter</a>, <a href="downloads/Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf">A-4</a></li>
+  <li>Dimensions: <a href="downloads/IQDimensions-mm.jpg">metric</a> or <a href="downloads/IQDimensions-in.jpg">inches</a></li>
+  <li><a href="applications.html">Application notes</a></li>
+  <li><a href="whyv34.html">Do I need V.34?</a></li>
+  <li><a href="software.html">Software Compatibility</a></li>
+  <li><a href="support.html">Support</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Home) How do I?',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'How do I?',
+      :content => '<ul>
+  <li><a href="savemoneyonfax.html">Save money on faxing?</a></li>
+  <li><a href="buildfaxserver.html">Build a Fax Server or Broadcast server?</a></li>
+  <li><a href="linebonding.html">Get a faster data connection on multiple lines?</a></li>
+  <li><a href="ras.html">Build a dial-in server </a></li>
+  <li><a href="tr114comparison.html">Compare QUATRO+ &amp; Brooktrout* TR114* </a></li>
+  <li><a href="tr1034comparison.html">Compare QUATRO+ &amp; Brooktrout* TR1034*</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Home) Latest News...',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'Latest News...',
+      :content => '<ul>
+  <li><a href="corporate/press/2007/PR101507_MSFax_.pdf" target="_blank">Mainpine&trade; certifies Microsoft&reg; SBS Fax Server</a></li>
+  <li><a href="corporate/press/2007/Mainpine-NextGen-Aug07.pdf" target="_blank">Mainpine&trade; boards offered with NextGen&reg;</a></li>
+  <li><a href="corporate/press/2007/PR_IQ-Express.pdf" target="_blank">Mainpine&trade; Announces PCI-Express Fax Board</a></li>
+  <li><a href="corporate/press/2006/Move.pdf" target="_blank">Move to New Headquarters; Adds to Mgmt</a></li>
+  <li><a href="/corporate/press/2006/Mainpine-Interbit-PR042406.pdf" target="_blank">Interbit Data Supported by RockForce Boards</a></li>
+  <li><a href="/corporate/press/2006/isvlab.html">Mainpine&trade; Announces ISV Certification Lab </a></li>
+  <li><a href="corporate/press/2006/newpresident.html" target="_blank">Mainpine&trade; Appoints New President and CEO</a></li>
+  <li><a href="corporate/press/2006/recordyear.html" target="_blank">Mainpine Announces Record Sales for 2005</a></li>
+  <li><a href="downloads/WP-Lobar.pdf" target="_blank">Lobar, Inc. Replace Brooktrout* with Mainpine</a></li>
+  <li><a href="newsarchive.html#EUenvDir">Mainpine Adopts EU Environmental Directives</a></li>
+  <li><a href="newsarchive.html#expEuroDist">Mainpine Expands European Distribution</a></li>
+  <li><a href="newsarchive.html#NAOffice">Mainpine Opens North American Office</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Home) How to Buy',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'How to Buy',
+      :content => '<ul>
+  <li><a href="sales.html">For End Users</a></li>
+  <li><a href="partners.html">For Resellers and OEMs</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Products) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="applications.html">Application notes</a></li>
+  <li><a href="whyv34.html">Do I need V.34?</a></li>
+  <li><a href="whattypeofboard.html">What type of fax board to I need?</a></li>
+  <li><a href="software.html">Software Compatibility</a></li>
+  <li><a href="support.html">Support</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Applications) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="sales.html">How to Buy</a></li>
+  <li><a href="software.html">Software Compatibility</a> </li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Sales) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="corporate.html">Corporate Information</a></li>
+  <li><a href="partners.html">Partners</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Support) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="corporate.html">Corporate Information</a></li>
+  <li><a href="software.html">Software Compatibility</a></li>
+  <li><a href="developers.html">What are the board\'s enhanced features?</a></li>
+  <li><a href="q_a.html">Frequently Asked Questions</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Partners) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="corporate.html">Corporate Information</a> </li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="applications.html">Applications</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Corporate) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="partners.html">Partners</a></li>
+  <li><a href="applications.html">Applications</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Contact) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="corporate.html">Corporate Information</a></li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="sales.html">How to buy</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Software) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="applications.html">Applications</a></li>
+  <li><a href="support.html">Support information</a></li>
+  <li><a href="products.html">Products</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Software) Operating systems',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'Operating systems',
+      :content => '<p><strong>Mainpine IQ Express products are tested with and support the following operating systems</strong></p>
+<ul>
+  <li>Microsoft Windows*
+    <ul>
+      <li>Windows XP</li>
+      <li>Windows Vista</li>
+      <li>Windows Server 2003</li>
+      <li>Windows Server 2008</li>
+    </ul>
+  </li>
+  <li>Linux
+    <ul>
+      <li>Kernel versions 2.4 and greater tested</li>
+    </ul>
+  </li>
+</ul>
+<p><a href="support.html">More information</a></p>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(Legal) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="corporate.html">Corporate Information</a></li>
+  <li><a href="contact.html">Contact us</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(WhyV34) More Information',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'More Information',
+      :content => '<ul>
+  <li><a href="applications.html">Other applications</a></li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="sales.html">How to buy</a></li>
+</ul>'
+    }
+  ]
+})
+
+CmsBlock.create({
+  :title => '(WhyV34) In this document',
+  :cms_contents_attributes => [
+    {
+      :status => 'published',
+      :title => 'In this document',
+      :content => '<ul>
+  <li><a href="#V34Fax">Do I need V.34?</a> </li>
+  <li><a href="#whatisv34">What is V.34?</a></li>
+  <li><a href="#v34intherelaworld">V.34 in the real world</a></li>
+  <li><a href="#compression">Compression</a></li>
+  <li><a href="#awordoncolor">A word on colour</a></li>
+  <li><a href="#countingthecost">Counting the cost</a></li>
+  <li><a href="#buyingav34solution">Buying a V.34 solution</a></li>
+  <li><a href="#gettingtherightsoftware">Getting the right Software</a></li>
+  <li><a href="#gettingtherighthardware">Getting the right Hardware</a></li>
+</ul>'
+    }
+  ]
+})
