@@ -2,9 +2,7 @@
   <b>Type:</b>
   <%=h @cms_block.type %>
 </p>
-<% @cms_block.cms_contents.each do |cms_content| -%>
-  <%= render 'admin/cms_contents/show_fields', :cms_content => cms_content %>
-<% end -%>
+<%= render 'admin/cms_contents/show_fields', :cms_content => @cms_block.current_cms_content %>
 
 
 <%= link_to 'Edit', edit_admin_cms_block_path(@cms_block) %> |

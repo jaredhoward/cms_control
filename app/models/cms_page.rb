@@ -14,8 +14,7 @@ class CmsPage < ActiveRecord::Base
   named_scope :active_menu, :conditions => "menu_title IS NOT NULL", :order => 'sort ASC'
   named_scope :published, :conditions => {:status => 'published'}
 
-  validates_presence_of :status
-  validates_inclusion_of :status, :in => STATUSES, :allow_nil => true
+  validates_inclusion_of :status, :in => STATUSES
 
   before_validation_on_create :associate_cms_meta_metaable_to_self
 

@@ -10,6 +10,10 @@ module CommonContentable
     # base.after_create :assign_current_cms_content
   end
 
+  def cms_content=(hash)
+    CmsContent.create_new_current_content(hash)
+  end
+
 protected
 
   def assign_current_cms_content

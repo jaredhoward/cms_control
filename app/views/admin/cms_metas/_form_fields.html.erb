@@ -14,4 +14,6 @@
   <%= f.label :keywords %><br />
   <%= f.text_field :keywords %>
 </p>
-<%= render 'admin/cms_contents/fields_area', :f => f %>
+<% f.fields_for (f.object.new_record? ? :cms_contents : f.object.current_cms_content) do |builder| -%>
+  <%= render 'admin/cms_contents/form_fields', :f => builder %>
+<% end -%>

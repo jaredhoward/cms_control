@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
     t.datetime "created_at"
     t.string   "contentable_type"
     t.integer  "contentable_id"
-    t.text     "content",          :limit => 2147483647
+    t.string   "status"
     t.string   "title"
+    t.text     "content",          :limit => 2147483647
   end
 
   create_table "cms_metas", :force => true do |t|
@@ -54,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
-    t.integer  "sort",         :default => 0, :null => false
-    t.boolean  "show_in_menu"
+    t.integer  "sort",       :default => 0, :null => false
+    t.text     "menu_title"
   end
 
   create_table "file_resource_attributes", :force => true do |t|

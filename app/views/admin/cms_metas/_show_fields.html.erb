@@ -14,6 +14,4 @@
   <b>Keywords:</b>
   <%=h p.cms_meta.keywords %>
 </p>
-<% p.cms_meta.cms_contents.each do |cms_content| -%>
-  <%= render 'admin/cms_contents/show_fields', :cms_content => cms_content %>
-<% end -%>
+<%= render 'admin/cms_contents/show_fields', :cms_content => p.cms_meta.current_cms_content %>

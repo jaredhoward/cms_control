@@ -5,7 +5,7 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
-  <% f.fields_for :cms_contents do |builder| -%>
+  <% f.fields_for f.object.new_record? ? :cms_contents : f.object.current_cms_content do |builder| -%>
     <%= render 'admin/cms_contents/form_fields', :f => builder %>
   <% end -%>
   <p>
