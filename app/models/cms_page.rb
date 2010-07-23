@@ -8,6 +8,8 @@ class CmsPage < ActiveRecord::Base
   has_many :cms_contents, :as => :contentable, :dependent => :destroy
   has_many :cms_page_categories, :dependent => :destroy
   has_many :categories, :through => :cms_page_categories
+  has_many :cms_page_cms_blocks, :dependent => :destroy
+  has_many :cms_blocks, :through => :cms_page_cms_blocks
 
   accepts_nested_attributes_for :cms_meta
 

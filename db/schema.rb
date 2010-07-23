@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716163541) do
+ActiveRecord::Schema.define(:version => 20100723183609) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(:version => 20100716163541) do
   create_table "cms_page_categories", :force => true do |t|
     t.integer "cms_page_id"
     t.integer "category_id"
+  end
+
+  create_table "cms_page_cms_blocks", :force => true do |t|
+    t.integer "cms_page_id",  :null => false
+    t.integer "cms_block_id", :null => false
+    t.integer "sort",         :null => false
   end
 
   create_table "cms_pages", :force => true do |t|

@@ -23,7 +23,7 @@ class CmsContent < ActiveRecord::Base
 private
 
   def set_status_to_published
-    self.status = 'published'
+    self.status = 'published' if self.status.nil?
   end
 
   def insure_contentable_has_current
