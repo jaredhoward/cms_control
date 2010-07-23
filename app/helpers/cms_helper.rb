@@ -6,15 +6,17 @@ module CmsHelper
 
   def build_top_nav()
     nav = Array.new
-    pages = CmsPage.all(:conditions => {:status => 'draft', :show_in_menu => true}, :order => 'sort ASC')
+    pages = CmsPage.published.active_menu
     pages.each do |page|
+      page_url = url_for(:controller => 'cms', :action => 'show', :id => page.cms_meta.id)
       current_nav = {
         :title => page.cms_meta.title,
-        :url => url_for(:controller => 'cms', :action => 'show', :id => page.cms_meta.id),
+        :url => page_url,
         :classes => []
       }
-      current_nav[:classes].push "first" if page == pages.first
-      current_nav[:classes].push "last" if page == pages.last
+      current_nav[:classes].push 'first' if page == pages.first
+      current_nav[:classes].push 'last' if page == pages.last
+      current_nav[:classes].push 'active' if current_page?(page_url)
       nav.push current_nav
     end
     return nav

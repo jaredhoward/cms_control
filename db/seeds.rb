@@ -2,8 +2,8 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 page = CmsPage.create({
-  :status => 'draft',
-  :show_in_menu => true,
+  :status => 'published',
+  :menu_title => 'Home',
   :cms_meta_attributes => {
     :url => 'home',
     :title => 'Main Pine',

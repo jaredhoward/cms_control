@@ -11,6 +11,9 @@ class CmsPage < ActiveRecord::Base
 
   accepts_nested_attributes_for :cms_meta
 
+  named_scope :active_menu, :conditions => "menu_title IS NOT NULL", :order => 'sort ASC'
+  named_scope :published, :conditions => {:status => 'published'}
+
   validates_presence_of :status
   validates_inclusion_of :status, :in => STATUSES, :allow_nil => true
 
