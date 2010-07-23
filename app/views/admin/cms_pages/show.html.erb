@@ -3,8 +3,8 @@
   <%= @cms_page.status %>
 </p>
 <p>
-  <b>Show in Menu:</b>
-  <%= @cms_page.show_in_menu? ? 'Yes' : 'No' %>
+  <b>Menu Title:</b>
+  <%= @cms_page.menu_title %>
 </p>
 <%= render 'admin/cms_metas/show_fields', :p => @cms_page %>
 
