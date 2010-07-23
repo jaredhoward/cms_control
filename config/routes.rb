@@ -6,8 +6,11 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :cms_pages
   end
 
-  # CMS Controller
+  # CMS Dynamic Routes
   CmsMeta.all.each do |cms|
     map.connect cms.url, :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
   end if CmsMeta.table_exists?
+
+  map.root :controller => 'cms', :action => 'show'
+  map.connect ':controller/:action/:id'
 end

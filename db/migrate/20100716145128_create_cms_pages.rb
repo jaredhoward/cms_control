@@ -4,7 +4,7 @@ class CreateCmsPages < ActiveRecord::Migration
       t.timestamps
       t.string :status
       t.integer :sort, :default => 0, :null => false
-      t.boolean :show_in_menu
+      t.text :menu_title
 
       t.index :status
       t.index :sort
