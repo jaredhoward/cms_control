@@ -1,0 +1,14 @@
+<% form_for [:admin, @file_resource] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+<% f.fields_for :cms_meta do |builder| %>
+  <%= render 'admin/cms_metas/form_fields', :f => builder %>
+<% end %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

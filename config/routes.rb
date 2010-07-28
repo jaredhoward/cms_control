@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :categories
     admin.resources :cms_blocks
     admin.resources :cms_pages
+    admin.resources :file_resources
     admin.resources :products
   end
 

@@ -1,0 +1,20 @@
+<h1>Listing Files</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th colspan="3">Actions</th>
+  </tr>
+<% @file_resources.each do |file_resource| %>
+  <tr>
+    <td><%=h file_resource.name %></td>
+    <td><%= link_to 'Show', [:admin, file_resource] %></td>
+    <td><%= link_to 'Edit', edit_admin_file_resource_path(file_resource) %></td>
+    <td><%= link_to 'Destroy', [:admin, file_resource], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New File', new_admin_file_resource_path %>
