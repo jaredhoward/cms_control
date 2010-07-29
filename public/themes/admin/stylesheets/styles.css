@@ -1,4 +1,5 @@
 body { margin: 0; padding: 0; background-color: #f9f9f9; }
+img { border:none; }
 .page-title { padding: 10px; clear: both; background:-moz-linear-gradient(center bottom , #D7D7D7, #E4E4E4) repeat scroll 0 0 transparent; border-bottom:1px solid #C6C6C6;}
 .page-title h1 { margin: 0; color:#464646; font: 22px Georgia,"Times New Roman","Bitstream Charter",Times,serif; }
 

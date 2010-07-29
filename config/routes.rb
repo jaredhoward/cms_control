@@ -3,9 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :categories
     admin.resources :cms_blocks
-    admin.resources :cms_pages
-    admin.resources :file_resources
-    admin.resources :products
+    admin.resources :cms_pages, :except => [:show]
+    admin.resources :file_resources, :except => [:show]
+    admin.resources :products, :except => [:show]
   end
 
   # CMS Dynamic Routes

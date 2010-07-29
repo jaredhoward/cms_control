@@ -20,8 +20,8 @@ class Admin::FileResourcesController < Admin::BaseController
     end
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def edit
   end

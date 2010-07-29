@@ -65,23 +65,12 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.text     "menu_title"
   end
 
-  create_table "file_resource_attributes", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "group"
-    t.string   "name"
-  end
-
-  create_table "file_resource_version_attributes", :force => true do |t|
-    t.integer "file_resource_version_id"
-    t.integer "file_resource_attribute_id"
-  end
-
-  create_table "file_resource_versions", :force => true do |t|
+  create_table "file_resource_releases", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "file_resource_id"
     t.string   "file"
+    t.text     "notes"
   end
 
   create_table "file_resources", :force => true do |t|
