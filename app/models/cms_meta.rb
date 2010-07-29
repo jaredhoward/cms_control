@@ -2,7 +2,7 @@ class CmsMeta < ActiveRecord::Base
   include CommonContentable
   include CommonRouteReload
 
-  METAABLES = ['CmsPage','FileResource','FileResourceVersion','Product']
+  METAABLES = ['CmsPage','FileResource','Product']
 
   belongs_to :metaable, :polymorphic => true
 
