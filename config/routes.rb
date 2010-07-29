@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.connect 'admin', :controller => 'admin', :action => 'index'
+  map.admin 'admin', :controller => 'admin', :action => 'index'
   map.namespace :admin do |admin|
     admin.resources :categories
     admin.resources :cms_blocks
