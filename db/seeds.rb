@@ -755,40 +755,6 @@ page_software = CmsPage.create!({
   }
 })
 
-page_ = CmsPage.create!({
-  :status => 'published',
-  :cms_meta_attributes => {
-    :url => '',
-    :title => '',
-    :description => '',
-    :keywords => '',
-    :cms_contents_attributes => [
-      {
-        :status => 'published',
-        :title => '',
-        :content => ''
-      }
-    ]
-  }
-})
-
-page_ = CmsPage.create!({
-  :status => 'published',
-  :cms_meta_attributes => {
-    :url => '',
-    :title => '',
-    :description => '',
-    :keywords => '',
-    :cms_contents_attributes => [
-      {
-        :status => 'published',
-        :title => '',
-        :content => ''
-      }
-    ]
-  }
-})
-
 ### CMS Blocks ###
 
 block_default = CmsBlock.create!({
