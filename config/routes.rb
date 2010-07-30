@@ -10,8 +10,15 @@ ActionController::Routing::Routes.draw do |map|
 
   # CMS Dynamic Routes
   CmsMeta.all.each do |cms|
-    map.connect "#{cms.url}.:format", :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get } if cms.metaable.is_showable
+    if cms.metaable.is_showable
+      if cms.metaable.is_a?(FileResource)
+        map.connect "/downloads/#{cms.url}", :controller => 'cms', :action => 'download', :id => cms.id, :conditions => { :method => :get }
+      else
+        map.connect "#{cms.url}.:format", :controller => 'cms', :action => 'show', :id => cms.id, :conditions => { :method => :get }
+      end
+    end
   end if CmsMeta.table_exists?
+
 
   map.root :controller => 'cms', :action => 'show'
   map.connect ':controller/:action/:id'

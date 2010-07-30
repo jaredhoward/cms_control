@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "access"
+    t.string   "path"
+    t.integer  "file_resource_release_id"
   end
 
   create_table "product_file_resources", :force => true do |t|

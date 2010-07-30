@@ -12,4 +12,13 @@ class CmsController < ApplicationController
     end
   end
 
+  def download
+    @meta = CmsMeta.find(params[:id])
+    if @meta && @meta.metaable.is_showable && @meta.metaable.current_release
+      send_file("#{RAILS_ROOT}/public/downloads/#{@meta.metaable.path}/#{@meta.metaable.current_release.file}")
+    else
+      render :text => 'No', :status => 404
+    end
+  end
+
 end
