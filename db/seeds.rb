@@ -3,7 +3,7 @@
 
 ### CMS Pages ###
 
-page_home = CmsPage.create({
+page_home = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Home',
   :cms_meta_attributes => {
@@ -50,7 +50,7 @@ page_home = CmsPage.create({
   }
 })
 
-page_products = CmsPage.create({
+page_products = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Products',
   :cms_meta_attributes => {
@@ -103,7 +103,7 @@ page_products = CmsPage.create({
   }
 })
 
-page_applications = CmsPage.create({
+page_applications = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Applications',
   :cms_meta_attributes => {
@@ -144,7 +144,7 @@ page_applications = CmsPage.create({
   }
 })
 
-page_sales = CmsPage.create({
+page_sales = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Sales',
   :cms_meta_attributes => {
@@ -182,7 +182,7 @@ page_sales = CmsPage.create({
   }
 })
 
-page_support = CmsPage.create({
+page_support = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Support',
   :cms_meta_attributes => {
@@ -412,7 +412,7 @@ page_support = CmsPage.create({
   }
 })
 
-page_partners = CmsPage.create({
+page_partners = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Partners',
   :cms_meta_attributes => {
@@ -491,7 +491,7 @@ page_partners = CmsPage.create({
   }
 })
 
-page_corporate = CmsPage.create({
+page_corporate = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Corporate',
   :cms_meta_attributes => {
@@ -535,7 +535,7 @@ page_corporate = CmsPage.create({
   }
 })
 
-page_contact = CmsPage.create({
+page_contact = CmsPage.create!({
   :status => 'published',
   :menu_title => 'Contact',
   :cms_meta_attributes => {
@@ -589,7 +589,7 @@ page_contact = CmsPage.create({
   }
 })
 
-page_legal = CmsPage.create({
+page_legal = CmsPage.create!({
   :status => 'published',
   :cms_meta_attributes => {
     :url => 'legal',
@@ -622,7 +622,7 @@ page_legal = CmsPage.create({
   }
 })
 
-page_whyv34 = CmsPage.create({
+page_whyv34 = CmsPage.create!({
   :status => 'published',
   :cms_meta_attributes => {
     :url => 'whyv34',
@@ -733,7 +733,7 @@ page_whyv34 = CmsPage.create({
   }
 })
 
-page_software = CmsPage.create({
+page_software = CmsPage.create!({
   :status => 'published',
   :cms_meta_attributes => {
     :url => 'software',
@@ -755,7 +755,7 @@ page_software = CmsPage.create({
   }
 })
 
-page_ = CmsPage.create({
+page_ = CmsPage.create!({
   :status => 'published',
   :cms_meta_attributes => {
     :url => '',
@@ -772,7 +772,7 @@ page_ = CmsPage.create({
   }
 })
 
-page_ = CmsPage.create({
+page_ = CmsPage.create!({
   :status => 'published',
   :cms_meta_attributes => {
     :url => '',
@@ -791,7 +791,7 @@ page_ = CmsPage.create({
 
 ### CMS Blocks ###
 
-block_default = CmsBlock.create({
+block_default = CmsBlock.create!({
   :title => '(Default) More Information',
   :cms_contents_attributes => [
     {
@@ -806,7 +806,7 @@ block_default = CmsBlock.create({
   ]
 })
 
-block_home_iq_express_information = CmsBlock.create({
+block_home_iq_express_information = CmsBlock.create!({
   :title => '(Home) IQ Express Information',
   :cms_contents_attributes => [
     {
@@ -824,7 +824,7 @@ block_home_iq_express_information = CmsBlock.create({
   ]
 })
 
-block_home_how_do_i = CmsBlock.create({
+block_home_how_do_i = CmsBlock.create!({
   :title => '(Home) How do I?',
   :cms_contents_attributes => [
     {
@@ -842,7 +842,7 @@ block_home_how_do_i = CmsBlock.create({
   ]
 })
 
-block_home_latest_news = CmsBlock.create({
+block_home_latest_news = CmsBlock.create!({
   :title => '(Home) Latest News...',
   :cms_contents_attributes => [
     {
@@ -866,7 +866,7 @@ block_home_latest_news = CmsBlock.create({
   ]
 })
 
-block_home_how_to_buy = CmsBlock.create({
+block_home_how_to_buy = CmsBlock.create!({
   :title => '(Home) How to Buy',
   :cms_contents_attributes => [
     {
@@ -880,7 +880,7 @@ block_home_how_to_buy = CmsBlock.create({
   ]
 })
 
-block_products_more_infomation = CmsBlock.create({
+block_products_more_infomation = CmsBlock.create!({
   :title => '(Products) More Information',
   :cms_contents_attributes => [
     {
@@ -897,7 +897,7 @@ block_products_more_infomation = CmsBlock.create({
   ]
 })
 
-block_applications_more_information = CmsBlock.create({
+block_applications_more_information = CmsBlock.create!({
   :title => '(Applications) More Information',
   :cms_contents_attributes => [
     {
@@ -912,7 +912,7 @@ block_applications_more_information = CmsBlock.create({
   ]
 })
 
-block_sales_more_information = CmsBlock.create({
+block_sales_more_information = CmsBlock.create!({
   :title => '(Sales) More Information',
   :cms_contents_attributes => [
     {
@@ -927,7 +927,7 @@ block_sales_more_information = CmsBlock.create({
   ]
 })
 
-block_support_more_information = CmsBlock.create({
+block_support_more_information = CmsBlock.create!({
   :title => '(Support) More Information',
   :cms_contents_attributes => [
     {
@@ -944,7 +944,7 @@ block_support_more_information = CmsBlock.create({
   ]
 })
 
-block_partners_more_information = CmsBlock.create({
+block_partners_more_information = CmsBlock.create!({
   :title => '(Partners) More Information',
   :cms_contents_attributes => [
     {
@@ -959,7 +959,7 @@ block_partners_more_information = CmsBlock.create({
   ]
 })
 
-block_corporate_more_information = CmsBlock.create({
+block_corporate_more_information = CmsBlock.create!({
   :title => '(Corporate) More Information',
   :cms_contents_attributes => [
     {
@@ -974,7 +974,7 @@ block_corporate_more_information = CmsBlock.create({
   ]
 })
 
-block_contact_more_information = CmsBlock.create({
+block_contact_more_information = CmsBlock.create!({
   :title => '(Contact) More Information',
   :cms_contents_attributes => [
     {
@@ -989,7 +989,7 @@ block_contact_more_information = CmsBlock.create({
   ]
 })
 
-block_legal_more_information = CmsBlock.create({
+block_legal_more_information = CmsBlock.create!({
   :title => '(Legal) More Information',
   :cms_contents_attributes => [
     {
@@ -1003,7 +1003,7 @@ block_legal_more_information = CmsBlock.create({
   ]
 })
 
-block_whyv34_in_this_document = CmsBlock.create({
+block_whyv34_in_this_document = CmsBlock.create!({
   :title => '(WhyV34) In this document',
   :cms_contents_attributes => [
     {
@@ -1024,7 +1024,7 @@ block_whyv34_in_this_document = CmsBlock.create({
   ]
 })
 
-block_software_more_information = CmsBlock.create({
+block_software_more_information = CmsBlock.create!({
   :title => '(Software) More Information',
   :cms_contents_attributes => [
     {
@@ -1039,7 +1039,7 @@ block_software_more_information = CmsBlock.create({
   ]
 })
 
-block_software_operating_systems = CmsBlock.create({
+block_software_operating_systems = CmsBlock.create!({
   :title => '(Software) Operating systems',
   :cms_contents_attributes => [
     {
@@ -1093,7 +1093,7 @@ page_whyv34.cms_blocks << block_whyv34_in_this_document
 page_software.cms_blocks << block_software_more_information
 page_software.cms_blocks << block_software_operating_systems
 
-product_iqe = Product.create({
+product_iqe = Product.create!({
   :name => 'IQ Express',
   :cms_meta_attributes => {
     :url => 'products_IQE',
@@ -1175,7 +1175,7 @@ product_iqe = Product.create({
   }
 })
 
-product_rockforce = Product.create({
+product_rockforce = Product.create!({
   :name => 'RockForce',
   :cms_meta_attributes => {
     :url => 'products_rockforce',
