@@ -1,10 +1,10 @@
-body { margin: 0; padding: 0; background-color: #f9f9f9; }
+body { margin: 0; padding: 0; background-color: #f9f9f9; color: 333; font-size: 16px; }
 img { border:none; }
 .page-title { padding: 10px; clear: both; background:-moz-linear-gradient(center bottom , #D7D7D7, #E4E4E4) repeat scroll 0 0 transparent; border-bottom:1px solid #C6C6C6;}
 .page-title h1 { margin: 0; color:#464646; font: 22px Georgia,"Times New Roman","Bitstream Charter",Times,serif; }
 
 .menu { float:left; width:150px; }
-.content { margin-left: 160px; }
+.content { margin-left: 160px; padding: 0 25px 25px 0; }
 
 .menu ul {
   list-style: none outside none;
@@ -20,6 +20,10 @@ img { border:none; }
   border: 1px solid #aaaaaa;
   margin-top: 10px;
   padding: 3px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
 }
 
 .menu ul li ul li.first { background-color: #fff; border-top: 1px solid #aaaaaa; }
@@ -31,5 +35,42 @@ img { border:none; }
   margin-top: 0;
   padding: 2px 8px;
 }
-.menu ul li ul li a { color: #21759B; }
+.menu ul li ul li a { color: #21759b; }
 
+h2 {
+	font:italic 24px/35px Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	margin:0;
+	padding:14px 15px 3px 0;
+	text-shadow:0 1px 0 #FFFFFF;
+	color:#464646;
+}
+
+table.list { min-width: 800px; }
+table.list thead th {
+	background: #dfdfdf url(../images/list-head.png) 0 0 repeat-x scroll;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	line-height: 1.3em;
+	padding: 7px 7px 8px;
+	text-align: left;
+	font-size: 12px;
+}
+/* borders and curves */
+table.list thead tr.first th { border-top: 1px solid #dfdfdf; }
+table.list thead tr.first th.first { -moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px; }
+table.list thead tr.first th.last { -moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px; }
+table.list thead th.last, table.list tbody td.last { border-right: 1px solid #dfdfdf; }
+table.list thead th.first, table.list tbody td.first { border-left: 1px solid #dfdfdf; }
+
+table.list tbody td { padding: 5px 10px; border-bottom: 1px solid #dfdfdf; }
+table.list tbody td a { color: #21759b; text-decoration: none; }
+table.list tbody td.title .actions { visibility:hidden; padding-top: 5px; }
+table.list tbody td.title:hover .actions { visibility:visible; padding-top: 5px; }
+table.list tbody td.title .actions a { font-size: 12px; border-right: 1px solid #21759b; padding-right: 5px; }
+table.list tbody td.title .actions a:hover { text-decoration: underline; }
+table.list tbody td.title .actions a.last { padding: none; border: none; }
+
+.top-nav { list-style: none outside none; position: relative; padding: 0; margin: 10px; }
+.top-nav ul {}
+.top-nav li {}
+.top-nav li a { font-size: 14px; text-decoration: none; color: #21759b; }
+.top-nav li a:hover { text-decoration: underline; }
