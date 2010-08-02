@@ -1,19 +1,19 @@
-<p>
-  <%= f.label :url %><br />
-  <%= f.text_field :url %>
-</p>
-<p>
-  <%= f.label :title %><br />
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %><br />
-  <%= f.text_field :description %>
-</p>
-<p>
-  <%= f.label :keywords %><br />
-  <%= f.text_field :keywords %>
-</p>
+<div class="input">
+  <%= f.label :url %>
+  <div class="field"><%= f.text_field :url %></div>
+</div>
+<div class="input">
+  <%= f.label :title %>
+  <div class="field"><%= f.text_field :title %></div>
+</div>
+<div class="input">
+  <%= f.label :description %>
+  <div class="field"><%= f.text_field :description %></div>
+</div>
+<div class="input">
+  <%= f.label :keywords %>
+  <div class="field"><%= f.text_field :keywords %></div>
+</div>
 <% f.fields_for (f.object.new_record? ? :cms_contents : f.object.current_cms_content) do |builder| -%>
   <%= render 'admin/cms_contents/form_fields', :f => builder %>
 <% end -%>
