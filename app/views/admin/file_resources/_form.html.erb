@@ -9,6 +9,10 @@
     <%= f.label :access %><br />
     <%= f.select :access, FileResource::ACCESSES %>
   </p>
+  <p>
+    <%= f.label :download_url %><br />
+    <%= f.text_field :download_url %>
+  </p>
 <% f.fields_for :cms_meta do |builder| %>
   <%= render 'admin/cms_metas/form_fields', :f => builder %>
 <% end %>

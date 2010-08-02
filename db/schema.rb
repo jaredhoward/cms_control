@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "access"
-    t.string   "path"
+    t.string   "download_url"
     t.integer  "file_resource_release_id"
   end
 

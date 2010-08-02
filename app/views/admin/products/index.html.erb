@@ -1,30 +1,27 @@
 <h2>Products</h2>
 <ul class="top-nav"><li class="first last add-new"><%= link_to("New Product", new_admin_product_path, :title => 'New') %></li></ul>
 <table class="list" cellpadding="0" cellspacing="0">
-	<thead>
-	  <tr class="first last">
-	    <th class="first">Name</th>
-	    <th>URL</th>
-	    <th class="last">Title</th>
-	  </tr>
-	</thead>
-	<tbody>
+  <thead>
+    <tr class="first last">
+      <th class="first">Name</th>
+      <th>URL</th>
+      <th class="last">Title</th>
+    </tr>
+  </thead>
+  <tbody>
 <% @products.each do |product| -%>
-	  <tr>
-	    <td class="first title">
-				<div class="title"><%= link_to h(product.name), edit_admin_product_path(product), :title => 'Edit Product' %></div>
-				<div class="actions">
-					<%= link_to 'Edit', edit_admin_product_path(product), :title => 'Edit Product' %>
-					<%= link_to 'Show', url_for(:controller => '/cms', :action => 'show', :id => product.cms_meta.id, :format => 'html'), :popup => true, :title => 'View Product in New Window' %>
-					<%= link_to 'Destroy', [:admin, product], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Product' %>
-				</div>
-			</td>
-	    <td><%=h product.cms_meta.url %></td>
-	    <td class="last"><%=h product.cms_meta.title %></td>
-	    <!-- <td><%= link_to(image_tag('/themes/admin/images/1280418455_Preview.png', :alt => 'Preview'), url_for(:controller => '/cms', :action => 'show', :id => product.cms_meta.id, :format => 'html'), :popup => true, :title => 'Preview') %></td>
-	    <td><%= link_to(image_tag('/themes/admin/images/1280418886_edit.png', :alt => 'Edit'), edit_admin_product_path(product), :title => 'Edit') %></td>
-	    <td><%= link_to(image_tag('/themes/admin/images/1280419405_Delete.png', :alt => 'Delete'), [:admin, product], :confirm => 'Are you sure?', :method => :delete, :title => 'Delete') %></td> -->
-  	</tr>
+    <tr>
+      <td class="first title">
+        <div class="title"><%= link_to h(product.name), edit_admin_product_path(product), :title => 'Edit Product' %></div>
+        <div class="actions">
+          <%= link_to 'Edit', edit_admin_product_path(product), :title => 'Edit Product' %>
+          <%= link_to 'Show', url_for_meta(product.cms_meta), :popup => true, :title => 'View Product in New Window' %>
+          <%= link_to 'Destroy', [:admin, product], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Product' %>
+        </div>
+      </td>
+      <td><%=h product.cms_meta.url %></td>
+      <td class="last"><%=h product.cms_meta.title %></td>
+    </tr>
 <% end -%>
-	</tbody>
+  </tbody>
 </table>

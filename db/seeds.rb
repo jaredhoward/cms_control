@@ -1197,9 +1197,9 @@ product_rockforce = Product.create!({
 file_iqe_data_sheet = FileResource.create!({
   :name => 'IQ Express Data Sheet',
   :access => 'public',
-  :path => 'iqe_data_sheet',
+  :download_url => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf',
   :cms_meta_attributes => {
-    :url => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf',
+    :url => 'iqe_data_sheet',
     :title => 'IQ Express Data Sheet',
     :cms_contents_attributes => [
       {
@@ -1220,9 +1220,9 @@ file_iqe_data_sheet.update_attribute(:current_release, file_iqe_data_sheet_relea
 file_iqe_dimensions_inches = FileResource.create!({
   :name => 'IQ Dimensions - Inches',
   :access => 'public',
-  :path => 'iqe_dimensions_inches',
+  :download_url => 'IQDimensions-in.jpg',
   :cms_meta_attributes => {
-    :url => 'IQDimensions-in.jpg',
+    :url => 'iqe_dimensions_inches',
     :title => 'IQ Dimensions - Inches',
     :cms_contents_attributes => [
       {
@@ -1243,9 +1243,9 @@ file_iqe_dimensions_inches.update_attribute(:current_release, file_iqe_dimension
 file_iqe_dimensions_mm = FileResource.create!({
   :name => 'IQ Dimensions - Millimeters',
   :access => 'public',
-  :path => 'iqe_dimensions_mm',
+  :download_url => 'IQDimensions-mm.jpg',
   :cms_meta_attributes => {
-    :url => 'IQDimensions-mm.jpg',
+    :url => 'iqe_dimensions_mm',
     :title => 'IQ Dimensions - Millimeters',
     :cms_contents_attributes => [
       {

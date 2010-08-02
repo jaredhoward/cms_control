@@ -10,8 +10,8 @@ class FileResource < ActiveRecord::Base
 
   accepts_nested_attributes_for :file_resource_releases
 
-  validates_presence_of :name, :path
-  validates_uniqueness_of :name, :path
+  validates_presence_of :name, :download_url
+  validates_uniqueness_of :name, :download_url
   validates_inclusion_of :access, :in => ACCESSES
 
   before_validation_on_create :set_access

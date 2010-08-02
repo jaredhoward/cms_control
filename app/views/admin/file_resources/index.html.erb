@@ -5,6 +5,7 @@
     <tr class="first last">
       <th class="first">Name</th>
       <th>Access</th>
+      <th>Download URL</th>
       <th>URL</th>
       <th class="last">Title</th>
     </tr>
@@ -16,12 +17,22 @@
         <div class="title"><%= link_to h(file_resource.name), edit_admin_file_resource_path(file_resource), :title => 'Edit File' %></div>
         <div class="actions">
           <%= link_to 'Edit', edit_admin_file_resource_path(file_resource), :title => 'Edit File' %>
-          <%= link_to 'Show', url_for(:controller => '/cms', :action => 'show', :id => file_resource.cms_meta.id, :format => 'html'), :popup => true, :title => 'View File in New Window' %>
           <%= link_to 'Destroy', [:admin, file_resource], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete File' %>
         </div>
       </td>
       <td><%= file_resource.access %></td>
-      <td><%=h file_resource.cms_meta.url %></td>
+      <td>
+        <div><%=h file_resource.download_url %></div>
+        <div class="actions">
+          <%= link_to 'Download', url_for_downloads(file_resource), :class => 'last', :title => 'Download the current release' %>
+        </div>
+      </td>
+      <td>
+        <div><%=h file_resource.cms_meta.url %></div>
+        <div class="actions">
+          <%= link_to 'Show', url_for_meta(file_resource.cms_meta), :popup => true, :class => 'last', :title => 'View File in New Window' %>
+        </div>
+      </td>
       <td class="last"><%=h file_resource.cms_meta.title %></td>
     </tr>
 <% end -%>

@@ -67,11 +67,11 @@ table.list thead th.first, table.list tbody td.first { border-left: 1px solid #d
 
 table.list tbody td { padding: 5px 10px; border-bottom: 1px solid #dfdfdf; vertical-align: top; }
 table.list tbody td a { color: #21759b; text-decoration: none; }
-table.list tbody td.title .actions { visibility:hidden; padding-top: 5px; }
+table.list tbody td .actions { visibility:hidden; padding-top: 5px; }
 table.list tbody tr:hover .actions { visibility:visible; padding-top: 5px; }
-table.list tbody td.title .actions a { font-size: 12px; border-right: 1px solid #21759b; padding-right: 5px; }
-table.list tbody td.title .actions a:hover { text-decoration: underline; }
-table.list tbody td.title .actions a.last { padding: none; border: none; }
+table.list tbody td .actions a { font-size: 12px; border-right: 1px solid #21759b; padding-right: 5px; }
+table.list tbody td .actions a:hover { text-decoration: underline; }
+table.list tbody td .actions a.last { padding: none; border: none; }
 
 .top-nav { list-style: none outside none; position: relative; padding: 0; margin: 10px; }
 .top-nav ul {}
