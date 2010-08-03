@@ -100,3 +100,5 @@ table.list tbody td .actions a.last { padding: none; border: none; }
 .top-nav li a { font-size: 14px; text-decoration: none; color: #21759b; }
 .top-nav li a:hover { text-decoration: underline; }
 .top-nav li.add-new a { background: transparent url(/themes/admin/images/1280419778_add.png) 0 0 no-repeat; padding: 2px 0 0 20px; }
+
+#cms_page_cms_meta_attributes_cms_content_content_tbl { width: 100%; }
