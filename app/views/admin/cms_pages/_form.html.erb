@@ -2,13 +2,13 @@
   <%= f.error_messages %>
 
   <div class="input">
-    <%= f.label :status %>
+    <%= f.label :status, 'Status', :class => 'title' %>
     <div class="field">
       <%= f.select :status, CmsPage::STATUSES %>
     </div>
   </div>
   <div class="input">
-    <%= f.label :menu_title %>
+    <%= f.label :menu_title, 'Menu Title', :class => 'title' %>
     <div class="field"><%= f.text_field :menu_title %></div>
   </div>
 <% f.fields_for :cms_meta do |builder| %>

@@ -1,10 +1,10 @@
 <% form_for [:admin, @product] do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <div class="input">
+    <%= f.label :name, 'Name', :class => 'title' %>
+    <div class="field"><%= f.text_field :name %></div>
+  </div>
 <% f.fields_for :cms_meta do |builder| %>
   <%= render 'admin/cms_metas/form_fields', :f => builder %>
 <% end %>
