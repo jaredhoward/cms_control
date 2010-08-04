@@ -11,9 +11,6 @@
   </head>
   <body>
     <div id="container">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <%- end -%>
       <div class="page-title"><h1>Mainpine Administration</h1></div>
       <div class="menu">
         <ul>
@@ -49,6 +46,10 @@
         </ul>
       </div>
       <div class="content">
+<%- flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<%- end -%>
+
         <%= yield %>
       </div>
     </div>

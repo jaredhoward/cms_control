@@ -20,6 +20,22 @@ class FileResource < ActiveRecord::Base
     return true
   end
 
+  def save_release(uploaded_file, make_current = false)
+    new_release = self.file_resource_releases.upload(uploaded_file, self)
+
+    if new_release.nil?
+      return false
+    elsif new_release.new_record?
+      return false, new_release.errors
+    else
+      if make_current == true && !new_release.nil?
+        self.current_release = new_release
+        self.save!
+      end
+      return true
+    end
+  end
+
 private
 
   def set_access

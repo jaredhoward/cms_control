@@ -1,21 +1,49 @@
-<% form_for [:admin, @file_resource] do |f| %>
+<% form_for [:admin, @file_resource], :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :access %><br />
-    <%= f.select :access, FileResource::ACCESSES %>
-  </p>
-  <p>
-    <%= f.label :download_url %><br />
-    <%= f.text_field :download_url %>
-  </p>
-<% f.fields_for :cms_meta do |builder| %>
+  <div class="input">
+    <%= f.label :access, 'Access', :class => 'title' %>
+    <div class="field"><%= f.select :access, FileResource::ACCESSES %></div>
+  </div>
+  <div class="input">
+    <%= f.label :name, 'Name', :class => 'title' %>
+    <div class="field"><%= f.text_field :name %></div>
+  </div>
+  <div class="input">
+    <%= f.label :download_url, 'Download URL', :class => 'title' %>
+    <div class="field"><%= f.text_field :download_url %></div>
+  </div>
+
+  <h2>Releases</h2>
+<% unless @file_resource.new_record? -%>
+  <ul class="top-nav">
+    <li id="add_release_link" class="first last add-new"><%= link_to_function 'Add Release', "$('add_release_link').hide(); $('current_release_link').show(); $('current_release_input').hide(); $('add_release_input').show();", :title => 'Create New Release' %></li>
+    <li id="current_release_link" class="first last" style="display:none"><%= link_to_function 'Current Release', "$('current_release_link').hide(); $('add_release_link').show(); $('add_release_input').hide(); $('current_release_input').show();", :title => 'Select Current Release' %></li>
+  </ul>
+  <div id="current_release_input" class="input">
+    <%= f.label :file_resource_release_id, 'Current Release', :class => 'title' %>
+    <div class="field"><%= f.select :file_resource_release_id, @file_resource.file_resource_releases.map{|r| [r.file, r.id]} %></div>
+  </div>
+<% end -%>
+  <div id="add_release_input" class="input"<% unless @file_resource.new_record? -%> style="display:none"<% end -%>>
+    <%= label_tag :new_release, 'New Release', :class => 'title' %>
+    <div class="field">
+      <%= file_field_tag :new_release %>
+<% if @file_resource.new_record? -%>
+      <%= hidden_field_tag :make_current, '1' %>
+<% else -%>
+      <div>
+        <%= check_box_tag :make_current %>
+        <%= label_tag :make_current, 'Set as current release', :class => 'check' %>
+      </div>
+<% end -%>
+    </div>
+  </div>
+
+  <h2>Page Information</h2>
+<% f.fields_for :cms_meta do |builder| -%>
   <%= render 'admin/cms_metas/form_fields', :f => builder %>
-<% end %>
+<% end -%>
   <p>
     <%= f.submit %>
   </p>
