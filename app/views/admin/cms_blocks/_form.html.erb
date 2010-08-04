@@ -1,10 +1,10 @@
 <% form_for [:admin, @cms_block] do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
+  <div class="input">
+    <%= f.label :title, 'Title', :class => 'title' %>
     <div class="field"><%= f.text_field :title %></div>
-  </p>
+  </div>
   <% f.fields_for f.object.new_record? ? :cms_contents : f.object.current_cms_content do |builder| -%>
     <%= render 'admin/cms_contents/form_fields', :f => builder %>
   <% end -%>
