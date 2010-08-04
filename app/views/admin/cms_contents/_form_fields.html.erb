@@ -1,12 +1,12 @@
 <%= f.hidden_field :id unless f.object.new_record? %>
 <div class="input">
-  <%= f.label :title, 'Content Title' %>
+  <%= f.label :title, 'Content Title', :class => 'title' %>
   <div class="field">
     <%= f.text_field :title %>
   </div>
 </div>
 <div class="input">
-  <%= f.label :content %>
+  <%= f.label :content, 'Content', :class => 'title' %>
   <div class="field">
     <%= f.text_area :content, :class => 'mceEditor' %>
   </div>

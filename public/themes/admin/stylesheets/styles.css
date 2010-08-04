@@ -56,7 +56,7 @@ table.list thead th {
 }
 
 /* Admin */
-form div.input label {
+form div.input label.title {
   display: block;
   color: #464646;
   background: #dfdfdf url(../images/list-head.png) 0 0 repeat-x scroll;
