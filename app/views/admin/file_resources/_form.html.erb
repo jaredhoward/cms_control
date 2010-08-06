@@ -1,4 +1,5 @@
 <% form_for [:admin, @file_resource], :html => {:multipart => true} do |f| %>
+  <%= render :partial => 'admin/shared/form_buttons' %>
   <%= f.error_messages %>
 
   <div class="input">
@@ -47,7 +48,4 @@
 <% f.fields_for :cms_meta do |builder| -%>
   <%= render 'admin/cms_metas/form_fields', :f => builder %>
 <% end -%>
-  <p>
-    <%= f.submit %>
-  </p>
 <% end %>

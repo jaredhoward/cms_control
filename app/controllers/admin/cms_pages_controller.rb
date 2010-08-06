@@ -14,7 +14,7 @@ class Admin::CmsPagesController < Admin::BaseController
   def create
     @cms_page = CmsPage.new(params[:cms_page])
     if @cms_page.save
-      redirect_to([:admin, @cms_page], :notice => 'Page was successfully created.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_page_url(@cms_page) : admin_cms_pages_url), :notice => 'Page was successfully created.')
     else
       render :new
     end
@@ -27,10 +27,8 @@ class Admin::CmsPagesController < Admin::BaseController
   end
 
   def update
-    # cms_content = params[:cms_page][:cms_meta_attributes][:cms_content].dup
-    # params[:cms_page][:cms_meta_attributes].delete(:cms_content)
     if @cms_page.update_attributes(params[:cms_page])
-      redirect_to([:admin, @cms_page], :notice => 'Page was successfully updated.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_page_url(@cms_page) : admin_cms_pages_url), :notice => 'Page was successfully updated.')
     else
       render :edit
     end
