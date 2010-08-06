@@ -4,7 +4,7 @@ class FileResource < ActiveRecord::Base
 
   ACCESSES = ['public','private'].freeze
 
-  belongs_to :current_release, :class_name => 'FileResourceRelease', :foreign_key => 'file_resource_release_id'
+  belongs_to :current_release, :class_name => 'FileResourceRelease', :foreign_key => 'current_release_id'
   has_many :file_resource_releases, :dependent => :destroy
   has_many :product_file_resources, :dependent => :destroy
 
@@ -14,32 +14,44 @@ class FileResource < ActiveRecord::Base
   validates_uniqueness_of :name, :download_url
   validates_inclusion_of :access, :in => ACCESSES
 
-  before_validation_on_create :set_access
+  before_validation_on_create :set_access, :associate_releases_to_self
+  after_create :assign_current_release
+  after_destroy :delete_save_folder
+
 
   def is_showable
     return true
   end
 
-  def save_release(uploaded_file, make_current = false)
-    new_release = self.file_resource_releases.upload(uploaded_file, self)
-
-    if new_release.nil?
-      return false
-    elsif new_release.new_record?
-      return false, new_release.errors
-    else
-      if make_current == true && !new_release.nil?
-        self.current_release = new_release
-        self.save!
-      end
-      return true
+  def save_folder_path
+    unless defined?(@save_folder_path)
+      @save_folder_path = File.join(RAILS_ROOT, 'file_resources', self.id.to_s)
+      FileUtils.mkdir_p(@save_folder_path) unless File.exists?(@save_folder_path)
     end
+    @save_folder_path
   end
 
 private
 
   def set_access
     self.access = 'public' if self.access.blank?
+  end
+
+  def associate_releases_to_self
+    self.file_resource_releases.each {|r| r.file_resource = self if r.file_resource.nil? }
+  end
+
+  def assign_current_release
+    if current_release.nil?
+      unless self.file_resource_releases.empty?
+        self.current_release = self.file_resource_releases.first
+        self.save!
+      end
+    end
+  end
+
+  def delete_save_folder
+    FileUtils.rm_r(save_folder_path, :force => true)
   end
 
 end

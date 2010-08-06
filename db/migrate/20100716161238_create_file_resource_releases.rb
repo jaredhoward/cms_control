@@ -4,7 +4,6 @@ class CreateFileResourceReleases < ActiveRecord::Migration
       t.timestamps
       t.integer :file_resource_id
       t.string :file
-      t.text :notes
 
       t.index :file_resource_id
     end

@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.datetime "updated_at"
     t.integer  "file_resource_id"
     t.string   "file"
-    t.text     "notes"
   end
 
   create_table "file_resources", :force => true do |t|
@@ -79,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.string   "name"
     t.string   "access"
     t.string   "download_url"
-    t.integer  "file_resource_release_id"
+    t.integer  "current_release_id"
   end
 
   create_table "product_file_resources", :force => true do |t|

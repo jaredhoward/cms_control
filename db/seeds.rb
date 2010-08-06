@@ -1198,6 +1198,11 @@ file_iqe_data_sheet = FileResource.create!({
   :name => 'IQ Express Data Sheet',
   :access => 'public',
   :download_url => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf'
+    }
+  ],
   :cms_meta_attributes => {
     :url => 'iqe_data_sheet',
     :title => 'IQ Express Data Sheet',
@@ -1210,17 +1215,16 @@ file_iqe_data_sheet = FileResource.create!({
     ]
   }
 })
-file_iqe_data_sheet_release1 = FileResourceRelease.create!({
-  :file_resource => file_iqe_data_sheet,
-  :file => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf',
-  :notes => ''
-})
-file_iqe_data_sheet.update_attribute(:current_release, file_iqe_data_sheet_release1)
 
 file_iqe_dimensions_inches = FileResource.create!({
   :name => 'IQ Dimensions - Inches',
   :access => 'public',
   :download_url => 'IQDimensions-in.jpg',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'IQDimensions-in.jpg'
+    }
+  ],
   :cms_meta_attributes => {
     :url => 'iqe_dimensions_inches',
     :title => 'IQ Dimensions - Inches',
@@ -1233,17 +1237,16 @@ file_iqe_dimensions_inches = FileResource.create!({
     ]
   }
 })
-file_iqe_dimensions_inches_release1 = FileResourceRelease.create!({
-  :file_resource => file_iqe_dimensions_inches,
-  :file => 'IQDimensions-in.jpg',
-  :notes => ''
-})
-file_iqe_dimensions_inches.update_attribute(:current_release, file_iqe_dimensions_inches_release1)
 
 file_iqe_dimensions_mm = FileResource.create!({
   :name => 'IQ Dimensions - Millimeters',
   :access => 'public',
   :download_url => 'IQDimensions-mm.jpg',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'IQDimensions-mm.jpg'
+    }
+  ],
   :cms_meta_attributes => {
     :url => 'iqe_dimensions_mm',
     :title => 'IQ Dimensions - Millimeters',
@@ -1256,9 +1259,3 @@ file_iqe_dimensions_mm = FileResource.create!({
     ]
   }
 })
-file_iqe_dimensions_mm_release1 = FileResourceRelease.create!({
-  :file_resource => file_iqe_dimensions_mm,
-  :file => 'IQDimensions-mm.jpg',
-  :notes => ''
-})
-file_iqe_dimensions_mm.update_attribute(:current_release, file_iqe_dimensions_mm_release1)
