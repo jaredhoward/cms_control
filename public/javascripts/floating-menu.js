@@ -1,4 +1,4 @@
-window.onscroll = function()
+Event.observe(window, 'scroll', function()
 {
   if( window.XMLHttpRequest ) {
     if (document.documentElement.scrollTop > 100 || self.pageYOffset > 100) {
@@ -10,3 +10,4 @@ window.onscroll = function()
     }
   }
 }
+);

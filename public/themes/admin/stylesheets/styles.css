@@ -1,4 +1,4 @@
-body { margin: 0; padding: 0; background-color: #f9f9f9; color: 333; font-size: 16px; }
+body { margin: 0; padding: 0; background-color: #f9f9f9; color: #333; font-size: 16px; }
 img { border:none; }
 .page-title { padding: 10px; clear: both; background:-moz-linear-gradient(center bottom , #D7D7D7, #E4E4E4) repeat scroll 0 0 transparent; border-bottom:1px solid #C6C6C6;}
 .page-title h1 { margin: 0; color:#464646; font: 22px Georgia,"Times New Roman","Bitstream Charter",Times,serif; }
@@ -97,7 +97,7 @@ table.list tbody td .actions { visibility:hidden; padding-top: 5px; }
 table.list tbody tr:hover .actions { visibility:visible; padding-top: 5px; }
 table.list tbody td .actions a { font-size: 12px; border-right: 1px solid #21759b; padding-right: 5px; }
 table.list tbody td .actions a:hover { text-decoration: underline; }
-table.list tbody td .actions a.last { padding: none; border: none; }
+table.list tbody td .actions a.last { padding: 0; border: none; }
 
 .top-nav { list-style: none outside none; position: relative; padding: 0; margin: 10px; }
 .top-nav ul {}
