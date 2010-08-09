@@ -1,5 +1,5 @@
 class CmsController < ApplicationController
-  layout '2col-right'
+  layout '2col-left'
 
   def show
     @meta = params[:id].nil? ? CmsMeta.first(:conditions => {:metaable_type => 'CmsPage', :url => 'home'}) : CmsMeta.find(params[:id])
