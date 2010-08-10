@@ -28,3 +28,5 @@
 .top-nav ul li a:hover { text-decoration: underline; color: #003366; }
 .top-nav ul li.first a { background: transparent url(../images/nav_home_f2.gif) 0 0 no-repeat; border-top: none; padding-left: 15px; padding-top: 1px; }
 .top-nav ul li.active a { background-color: #ecf5fa; }
+
+.footer-wrapper { clear: both; padding: 15px 20px; }
