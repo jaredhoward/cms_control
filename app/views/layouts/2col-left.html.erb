@@ -9,7 +9,6 @@
   <meta name="keywords" content="<%= content_for :meta_keywords %>" />
   <meta name="robots" content="INDEX,FOLLOW" />
   <%= stylesheet_link_tag("/themes/default/stylesheets/2col-left") %>
-  
 </head>
 <body>
 
@@ -17,12 +16,12 @@
 
     <div class="page">
       <div class="header">
-        <h2 class="logo"><%= link_to 'MainPine', root_url %></a></h2>
+        <h1 class="logo"><%= link_to 'MainPine', root_url %></a></h1>
         <div class="top-nav">
           <%= yield :nav_top %>
         </div>
       </div>
-      
+
       <div class="main">
         <div class="col-main">
           <h1><%= yield :page_header %></h1>

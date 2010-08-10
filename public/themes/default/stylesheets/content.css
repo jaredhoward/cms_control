@@ -1,9 +1,0 @@
-body, img, p, h1, h2, h3, h4 { margin: 0; padding: 0; }
-img { border: none; }
-.clearer { clear: both; }
-a { color: #003366; }
-a:hover { color: #0033ee; }
-
-h3 { background: transparent url(../images/panel_tl.gif) 0 0 no-repeat; height: 25px; line-height: 25px; padding-left: 20px; border-bottom: 1px solid #000; border-right: 1px solid #000; margin-bottom: 0; }
-ul { border: 1px solid #000; border-top: none; margin-top: 0; padding: 10px 15px 10px 25px; }
-ul { -moz-border-radius-bottomright: 25px; -webkit-border-bottom-right-radius: 25px; }
