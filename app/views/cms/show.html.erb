@@ -10,4 +10,8 @@
 </ul>
 <% end %>
 
+<% content_for :footer do %>
+&copy; Mainpine 1997-2010 *<%= link_to('Legal information', :controller => 'cms', :action => 'show', :id => 9, :format => 'html') %>
+<% end %>
+
 <%= @content %>

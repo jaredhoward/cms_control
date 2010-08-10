@@ -5,8 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title><%= yield :title %></title>
-  <meta name="description" content="<%= content_for :meta_description %>" />
-  <meta name="keywords" content="<%= content_for :meta_keywords %>" />
+  <meta name="description" content="<%= yield :meta_description %>" />
+  <meta name="keywords" content="<%= yield :meta_keywords %>" />
   <meta name="robots" content="INDEX,FOLLOW" />
   <%= stylesheet_link_tag("/themes/default/stylesheets/2col-left") %>
 </head>

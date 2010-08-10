@@ -38,3 +38,5 @@ a:hover { color: #0033ee; }
 .col-right h3 { background: transparent url(../images/panel_tl.gif) 0 0 no-repeat; height: 25px; line-height: 25px; padding-left: 20px; border-bottom: 1px solid #000; border-right: 1px solid #000; margin-bottom: 0; }
 .col-right ul { border: 1px solid #000; border-top: none; margin-top: 0; padding: 10px 15px 10px 25px; }
 .col-right ul { -moz-border-radius-bottomright: 25px; -webkit-border-bottom-right-radius: 25px; }
+
+.footer-wrapper { clear: both; padding: 15px 20px; }
