@@ -7,6 +7,7 @@ tinyMCE.init({
   plugins : "fullscreen, advimage, contextmenu, table",
   theme_advanced_buttons3_add : "fullscreen, tablecontrols",
   theme_advanced_statusbar_location : "bottom",
+  content_css : "/themes/default/stylesheets/content.css",
   width: '100%',
   height: '100%'
 });
