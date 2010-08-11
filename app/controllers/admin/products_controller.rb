@@ -14,7 +14,7 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new(params[:product])
     if @product.save
-      redirect_to([:admin, @product], :notice => 'Product was successfully created.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_product_url(@product) : admin_products_url), :notice => 'Product was successfully created.')
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes(params[:product])
-      redirect_to([:admin, @product], :notice => 'Product was successfully updated.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_product_url(@product) : admin_products_url), :notice => 'Product was successfully updated.')
     else
       render :edit
     end

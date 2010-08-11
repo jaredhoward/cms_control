@@ -15,7 +15,7 @@ class Admin::FileResourcesController < Admin::BaseController
   def create
     @file_resource = FileResource.new(params[:file_resource])
     if @file_resource.save
-      redirect_to(admin_file_resources_url, :notice => 'File was successfully created.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_file_resource_url(@file_resource) : admin_file_resources_url), :notice => 'File was successfully created.')
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::FileResourcesController < Admin::BaseController
 
   def update
     if @file_resource.update_attributes(params[:file_resource])
-      redirect_to(admin_file_resources_url, :notice => 'File was successfully updated.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_file_resource_url(@file_resource) : admin_file_resources_url), :notice => 'File was successfully updated.')
     else
       render :edit
     end
