@@ -779,7 +779,7 @@ block_home_iq_express_information = CmsBlock.create!({
       :status => 'published',
       :title => 'IQ Express Information',
       :content => '<ul>
-  <li>IQ Express Datasheet, format: <a href="/downloads/Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf">Letter</a>, <a href="/downloads/Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf">A-4</a></li>
+  <li>IQ Express Datasheet, format: <a href="/downloads/Mainpine_IQ_Express_Data_Sheet.pdf">Letter</a>, <a href="/downloads/Mainpine_IQ_Express_Data_Sheet.pdf">A-4</a></li>
   <li>Dimensions: <a href="/downloads/IQDimensions-mm.jpg">metric</a> or <a href="/downloads/IQDimensions-in.jpg">inches</a></li>
   <li><a href="/applications.html">Application notes</a></li>
   <li><a href="/whyv34.html">Do I need V.34?</a></li>
@@ -1196,8 +1196,7 @@ product_rockforce = Product.create!({
 
 file_iqe_data_sheet = FileResource.create!({
   :name => 'IQ Express Data Sheet',
-  :access => 'public',
-  :download_url => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf',
+  :download_url => 'Mainpine_IQ_Express_Data_Sheet.pdf',
   :file_resource_releases_attributes => [
     {
       :file => 'Mainpine_IQ_Express_Data_Sheet_19DEC08-TP1.pdf'
@@ -1218,7 +1217,6 @@ file_iqe_data_sheet = FileResource.create!({
 
 file_iqe_dimensions_inches = FileResource.create!({
   :name => 'IQ Dimensions - Inches',
-  :access => 'public',
   :download_url => 'IQDimensions-in.jpg',
   :file_resource_releases_attributes => [
     {
@@ -1240,7 +1238,6 @@ file_iqe_dimensions_inches = FileResource.create!({
 
 file_iqe_dimensions_mm = FileResource.create!({
   :name => 'IQ Dimensions - Millimeters',
-  :access => 'public',
   :download_url => 'IQDimensions-mm.jpg',
   :file_resource_releases_attributes => [
     {

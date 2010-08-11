@@ -4,9 +4,8 @@
   <thead>
     <tr class="first last">
       <th class="first">Name</th>
-      <th>Access</th>
+      <%= render 'admin/cms_metas/shared_index_header' %>
       <th>Download URL</th>
-      <th>URL</th>
       <th class="last">Title</th>
     </tr>
   </thead>
@@ -20,17 +19,11 @@
           <%= link_to 'Destroy', [:admin, file_resource], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete File' %>
         </div>
       </td>
-      <td><%= file_resource.access %></td>
+      <%= render 'admin/cms_metas/shared_index_item', :cms_meta => file_resource.cms_meta %>
       <td>
         <div><%=h file_resource.download_url %></div>
         <div class="actions">
           <%= link_to 'Download', url_for_downloads(file_resource), :class => 'last', :title => 'Download the current release' %>
-        </div>
-      </td>
-      <td>
-        <div><%=h file_resource.cms_meta.url %></div>
-        <div class="actions">
-          <%= link_to 'Show', url_for_meta(file_resource.cms_meta), :popup => true, :class => 'last', :title => 'View File in New Window' %>
         </div>
       </td>
       <td class="last"><%=h file_resource.cms_meta.title %></td>

@@ -2,8 +2,6 @@ class FileResource < ActiveRecord::Base
   include CommonMetaable
   include CommonRouteReload
 
-  ACCESSES = ['public','private'].freeze
-
   belongs_to :current_release, :class_name => 'FileResourceRelease', :foreign_key => 'current_release_id'
   has_many :file_resource_releases, :dependent => :destroy
   has_many :product_file_resources, :dependent => :destroy
@@ -12,9 +10,8 @@ class FileResource < ActiveRecord::Base
 
   validates_presence_of :name, :download_url
   validates_uniqueness_of :name, :download_url
-  validates_inclusion_of :access, :in => ACCESSES
 
-  before_validation_on_create :set_access, :associate_releases_to_self
+  before_validation_on_create :associate_releases_to_self
   after_create :assign_current_release
   after_destroy :delete_save_folder
 
@@ -32,10 +29,6 @@ class FileResource < ActiveRecord::Base
   end
 
 private
-
-  def set_access
-    self.access = 'public' if self.access.blank?
-  end
 
   def associate_releases_to_self
     self.file_resource_releases.each {|r| r.file_resource = self if r.file_resource.nil? }

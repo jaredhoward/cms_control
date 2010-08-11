@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.datetime "updated_at"
     t.string   "metaable_type"
     t.integer  "metaable_id"
+    t.string   "access"
     t.string   "url"
     t.string   "title"
     t.integer  "current_cms_content_id"
@@ -76,7 +77,6 @@ ActiveRecord::Schema.define(:version => 20100723183609) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "access"
     t.string   "download_url"
     t.integer  "current_release_id"
   end

@@ -2,11 +2,10 @@ class CreateFileResources < ActiveRecord::Migration
   def self.up
     create_table :file_resources do |t|
       t.timestamps
-      t.string :name, :access, :download_url
+      t.string :name, :download_url
       t.integer :current_release_id
 
       t.index :name
-      t.index :access
     end
   end
 

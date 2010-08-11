@@ -1,3 +1,8 @@
+<h2>Page Information</h2>
+<div class="input">
+  <%= f.label :access, 'Access', :class => 'title' %>
+  <div class="field"><%= f.select :access, CmsMeta::ACCESSES %></div>
+</div>
 <div class="input">
   <%= f.label :url, 'URL', :class => 'title' %>
   <div class="field"><%= f.text_field :url %></div>

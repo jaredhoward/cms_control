@@ -4,7 +4,7 @@
   <thead>
     <tr class="first last">
       <th class="first">Title</th>
-      <th>URL</th>
+      <%= render 'admin/cms_metas/shared_index_header' %>
       <th class="last">Status</th>
     </tr>
   </thead>
@@ -17,11 +17,10 @@
         </div>
         <div class="actions">
           <%= link_to 'Edit', edit_admin_cms_page_path(cms_page), :title => 'Edit Page' %>
-          <%= link_to 'Show', url_for_meta(cms_page.cms_meta), :popup => true, :title => 'View Page in New Window' %>
           <%= link_to 'Destroy', [:admin, cms_page], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Page' %>
         </div>
       </td>
-      <td><%=h cms_page.cms_meta.url %></td>
+      <%= render 'admin/cms_metas/shared_index_item', :cms_meta => cms_page.cms_meta %>
       <td class="last"><%= cms_page.status %></td>
     </tr>
 <% end -%>
