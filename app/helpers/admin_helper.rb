@@ -7,13 +7,13 @@ module AdminHelper
     elsif params[:controller].include?('page') then 'Page'
     elsif params[:controller].include?('product') then 'Product'
     elsif params[:controller].include?('file') then 'File'
-    else nil
+    else ''
     end
 
-    action = if params[:action].include?('new') then 'Creating New'
+    action = if params[:action].include?('new') || params[:action].include?('create') then 'Creating New'
     elsif params[:action].include?('edit') then 'Editing'
     elsif params[:action].include?('update') then 'Editing'
-    else nil
+    else params[:action]
     end
     
     return action + ' ' + item

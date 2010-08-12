@@ -14,7 +14,7 @@ img { border:none; }
 }
 
 .menu ul ul { margin: 0; }
-.menu ul li {
+.menu ul li.container {
   font: 13px/18px Georgia,"Times New Roman","Bitstream Charter",Times,serif; 
   background-color: #f1f1f1;
   border: 1px solid #aaaaaa;
@@ -110,3 +110,22 @@ table.list tbody td .actions a.last { padding: 0; border: none; }
 
 .mceIframeContainer { height: 100%; }
 .mce-editor { height: 600px; }
+
+#flash_notice {
+  background:url("../images/notice.png") no-repeat scroll 10px 50% #FFFFFF;
+  border:1px solid #CCCCCC;
+  margin-top:10px;
+  padding:10px 50px;
+}
+.errorExplanation {
+  background: url(../images/warning.png) no-repeat scroll 10px 5px #fff;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px 50px;
+}
+.errorExplanation h2 { margin: 0; padding-top: 3px; font-size: 18px; }
+.errorExplanation p { margin: 5px 0 3px 0; font-size: 14px; }
+.errorExplanation ul { margin: 0; padding: 0 20px; font-size: 14px; }
+.errorExplanation ul li {}
+
+.fieldWithErrors input { background-color: #ffffcc; }
