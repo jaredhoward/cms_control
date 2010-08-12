@@ -1256,3 +1256,89 @@ file_iqe_dimensions_mm = FileResource.create!({
     ]
   }
 })
+
+file_iqe_rev3_win_driver = FileResource.create!({
+  :name => 'IQ Express Rev 3 Windows Driver',
+  :download_url => 'iqe_rev3_win_driver.zip',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'MPCD20MAR09.zip'
+    }
+  ],
+  :cms_meta_attributes => {
+    :url => 'iqe_rev3_win_driver',
+    :title => 'IQ Express Rev 3 Windows Driver',
+    :cms_contents_attributes => [
+      {
+        :status => 'published',
+        :title => 'IQ Express Rev3 Windows Driver',
+        :content => ''
+      }
+    ]
+  }
+})
+
+file_iqe_rev1and2_win_driver = FileResource.create!({
+  :name => 'IQ Express Rev 1 and 2 Windows Driver',
+  :download_url => 'iqe_rev1and2_win_driver.zip',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'MPCD17SEP07.zip'
+    }
+  ],
+  :cms_meta_attributes => {
+    :url => 'iqe_rev1and2_win_driver',
+    :title => 'IQ Express Rev 1 and 2 Windows Driver',
+    :cms_contents_attributes => [
+      {
+        :status => 'published',
+        :title => 'IQ Express Rev 1 and 2 Windows Driver',
+        :content => ''
+      }
+    ]
+  }
+})
+
+file_rockforce_win_driver = FileResource.create!({
+  :name => 'RockForce Rev 2.2 Windows Driver',
+  :download_url => 'rockforce_win_driver.zip',
+  :file_resource_releases_attributes => [
+    {
+      :file => 'MPCD19MAR07.zip'
+    }
+  ],
+  :cms_meta_attributes => {
+    :url => 'rockforce_win_driver',
+    :title => 'RockForce Rev 2.2 Windows Driver',
+    :cms_contents_attributes => [
+      {
+        :status => 'published',
+        :title => 'RockForce Rev 2.2 Windows Driver',
+        :content => ''
+      }
+    ]
+  }
+})
+
+category_productfileresource_driver = Category.create!({
+  :category_type => 'ProductFileResource',
+  :name => 'Driver'
+})
+
+ProductFileResource.create!({
+  :product => product_iqe,
+  :file_resource => file_iqe_rev3_win_driver,
+  :category => category_productfileresource_driver
+})
+
+ProductFileResource.create!({
+  :product => product_iqe,
+  :file_resource => file_iqe_rev1and2_win_driver,
+  :category => category_productfileresource_driver
+})
+
+ProductFileResource.create!({
+  :product => product_rockforce,
+  :file_resource => file_rockforce_win_driver,
+  :category => category_productfileresource_driver
+})

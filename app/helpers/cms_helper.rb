@@ -1,5 +1,13 @@
 module CmsHelper
 
+  def col_right_area(metaable)
+    case metaable
+    when CmsPage then cms_blocks(metaable)
+    when FileResource then block_for_file_resource(metaable)
+    when Product then block_for_product(metaable)
+    end
+  end
+
   def cms_blocks(cms_page)
     content = String.new
     blocks = cms_page.cms_blocks.empty? ? [CmsBlock.first] : cms_page.cms_blocks
@@ -13,7 +21,27 @@ module CmsHelper
     return content_tag(:h3, cms_block.current_cms_content.title) + cms_block.current_cms_content.content.html_safe
   end
 
-  def build_top_nav()
+  def block_for_file_resource(file_resource)
+    items = ''
+    items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'download', :id => file_resource.id))
+    # file_resource.file_resource_releases.each do |release|
+    #   # items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'download', :id => file_resource.id))
+    # end
+
+    return content_tag(:h3, 'Downloads') + content_tag(:ul, items)
+  end
+
+  def block_for_product(product)
+    items = ''
+    product.file_resources.public_access.each do |file_resource|
+      # items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'download', :id => file_resource.id))
+      items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'show', :id => file_resource.cms_meta.id, :format => 'html'))
+    end
+
+    return content_tag(:h3, 'Related Files') + content_tag(:ul, items)
+  end
+
+  def build_top_nav
     nav = Array.new
     pages = CmsPage.published.active_menu
     pages.each do |page|

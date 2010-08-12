@@ -1,10 +1,10 @@
 <% content_for(:meta_description, @description) %>
 <% content_for(:page_header, @content_title) %>
-<% content_for(:col_right, cms_blocks(@meta.metaable)) if @meta.metaable.is_a?(CmsPage) %>
+<% content_for(:col_right, col_right_area(@meta.metaable)) %>
 
 <% content_for :nav_top do %>
 <ul class="nav-top">
-<% build_top_nav().each do |li| -%>
+<% build_top_nav.each do |li| -%>
   <li<%= ' class="'+li[:classes].join(' ')+'"' unless li[:classes].blank? %>><%= link_to li[:title], li[:url]%></li>
 <% end -%>
 </ul>
