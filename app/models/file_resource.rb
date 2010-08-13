@@ -7,6 +7,7 @@ class FileResource < ActiveRecord::Base
   has_many :product_file_resources, :dependent => :destroy
 
   accepts_nested_attributes_for :file_resource_releases
+  accepts_nested_attributes_for :product_file_resources, :allow_destroy => true
 
   validates_presence_of :name, :download_url
   validates_uniqueness_of :name, :download_url

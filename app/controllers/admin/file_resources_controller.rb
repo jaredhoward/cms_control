@@ -8,6 +8,7 @@ class Admin::FileResourcesController < Admin::BaseController
   def new
     @file_resource = FileResource.new
     1.times { @file_resource.file_resource_releases.build }
+    1.times { @file_resource.product_file_resources.build }
     @file_resource.build_cms_meta
     1.times { @file_resource.cms_meta.cms_contents.build }
   end
@@ -25,6 +26,7 @@ class Admin::FileResourcesController < Admin::BaseController
   # end
 
   def edit
+    1.times { @file_resource.product_file_resources.build } if @file_resource.product_file_resources.empty?
   end
 
   def update

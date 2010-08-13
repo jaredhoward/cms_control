@@ -38,8 +38,10 @@ private
 
   def set_file_resource_current_release
     if self.make_current == '1'
-      self.file_resource.current_release = self
-      self.file_resource.save!
+      # This is kind of ugly but it's avoids an infinite loop for saving with the association.
+      fr = self.file_resource.class.find(self.file_resource)
+      fr.current_release_id = self.id
+      fr.save!
     end
   end
 
