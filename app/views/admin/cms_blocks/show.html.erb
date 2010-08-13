@@ -1,9 +1,0 @@
-<p>
-  <b>Type:</b>
-  <%=h @cms_block.type %>
-</p>
-<%= render 'admin/cms_contents/show_fields', :cms_content => @cms_block.current_cms_content %>
-
-
-<%= link_to 'Edit', edit_admin_cms_block_path(@cms_block) %> |
-<%= link_to 'Back', admin_cms_blocks_path %>

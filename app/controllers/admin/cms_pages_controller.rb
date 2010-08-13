@@ -1,8 +1,8 @@
 class Admin::CmsPagesController < Admin::BaseController
-  before_filter :load_cms_page, :only => [:show, :edit, :update, :destroy]
+  before_filter :load_cms_page, :only => [:edit, :update, :destroy]
 
   def index
-    @cms_pages = CmsPage.all
+    @cms_pages = CmsPage.meta_title_order
   end
 
   def new
@@ -20,9 +20,6 @@ class Admin::CmsPagesController < Admin::BaseController
     end
   end
 
-  # def show
-  # end
-
   def edit
   end
 
@@ -36,7 +33,7 @@ class Admin::CmsPagesController < Admin::BaseController
 
   def destroy
     @cms_page.destroy
-    redirect_to(admin_cms_pages_url)
+    redirect_to(admin_cms_pages_url, :notice => 'Page was deleted.')
   end
 
 protected

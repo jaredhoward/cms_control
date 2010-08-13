@@ -1,8 +1,8 @@
 class Admin::FileResourcesController < Admin::BaseController
-  before_filter :load_file_resource, :only => [:show, :edit, :update, :destroy]
+  before_filter :load_file_resource, :only => [:edit, :update, :destroy]
 
   def index
-    @file_resources = FileResource.all
+    @file_resources = FileResource.name_order
   end
 
   def new
@@ -22,9 +22,6 @@ class Admin::FileResourcesController < Admin::BaseController
     end
   end
 
-  # def show
-  # end
-
   def edit
     1.times { @file_resource.product_file_resources.build } if @file_resource.product_file_resources.empty?
   end
@@ -39,7 +36,7 @@ class Admin::FileResourcesController < Admin::BaseController
 
   def destroy
     @file_resource.destroy
-    redirect_to(admin_file_resources_url)
+    redirect_to(admin_file_resources_url, :notice => 'File was deleted.')
   end
 
 protected

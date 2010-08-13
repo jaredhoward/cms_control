@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.admin 'admin', :controller => 'admin', :action => 'index'
   map.namespace :admin do |admin|
-    admin.resources :categories
-    admin.resources :cms_blocks
+    admin.resources :categories, :except => [:show]
+    admin.resources :cms_blocks, :except => [:show]
     admin.resources :cms_pages, :except => [:show]
     admin.resources :file_resources, :except => [:show]
     admin.resources :products, :except => [:show]

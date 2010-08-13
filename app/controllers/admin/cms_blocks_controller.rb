@@ -1,8 +1,8 @@
 class Admin::CmsBlocksController < Admin::BaseController
-  before_filter :load_cms_block, :only => [:show, :edit, :update, :destroy]
+  before_filter :load_cms_block, :only => [:edit, :update, :destroy]
 
   def index
-    @cms_blocks = CmsBlock.all
+    @cms_blocks = CmsBlock.title_order
   end
 
   def new
@@ -13,13 +13,10 @@ class Admin::CmsBlocksController < Admin::BaseController
   def create
     @cms_block = CmsBlock.new(params[:cms_block])
     if @cms_block.save
-      redirect_to([:admin, @cms_block], :notice => 'Block was successfully created.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_block_url(@cms_block) : admin_cms_blocks_url), :notice => 'Block was successfully created.')
     else
       render :new
     end
-  end
-
-  def show
   end
 
   def edit
@@ -27,7 +24,7 @@ class Admin::CmsBlocksController < Admin::BaseController
 
   def update
     if @cms_block.update_attributes(params[:cms_block])
-      redirect_to([:admin, @cms_block], :notice => 'Block was successfully updated.')
+      redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_block_url(@cms_block) : admin_cms_blocks_url), :notice => 'Block was successfully updated.')
     else
       render :edit
     end
@@ -35,7 +32,7 @@ class Admin::CmsBlocksController < Admin::BaseController
 
   def destroy
     @cms_block.destroy
-    redirect_to(admin_cms_blocks_url)
+    redirect_to(admin_cms_blocks_url, :notice => 'Block was deleted.')
   end
 
 protected

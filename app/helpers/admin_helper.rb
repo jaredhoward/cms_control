@@ -1,6 +1,6 @@
 module AdminHelper
 
-  def get_title()
+  def get_title
     action = params[:action]
 
     item = if params[:controller].include?('block') then 'Block'

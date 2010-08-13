@@ -45,7 +45,7 @@
   <%= builder.hidden_field :_destroy, :value => (builder.object.new_record? ? 1 : 0), :id => 'destroy_product_assoc' %>
   <div class="input">
     <%= builder.label :product_id, 'Product', :class => 'title' %>
-    <div class="field"><%= builder.select :product_id, Product.named_order.map{|p| [p.name, p.id]}, {:include_blank => true}, {:onchange => "$('destroy_product_assoc').value = (this.value == '' ? 1 : 0)"} %></div>
+    <div class="field"><%= builder.select :product_id, Product.name_order.map{|p| [p.name, p.id]}, {:include_blank => true}, {:onchange => "$('destroy_product_assoc').value = (this.value == '' ? 1 : 0)"} %></div>
   </div>
 <% end %>
 

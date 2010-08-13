@@ -1,8 +1,8 @@
 class Admin::ProductsController < Admin::BaseController
-  before_filter :load_product, :only => [:show, :edit, :update, :destroy]
+  before_filter :load_product, :only => [:edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = Product.name_order
   end
 
   def new
@@ -20,9 +20,6 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
-  # def show
-  # end
-
   def edit
   end
 
@@ -36,7 +33,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def destroy
     @product.destroy
-    redirect_to(admin_products_url)
+    redirect_to(admin_products_url, :notice => 'Product was deleted.')
   end
 
 protected
