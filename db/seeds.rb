@@ -9,8 +9,6 @@ page_home = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'home',
     :title => 'Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -56,8 +54,6 @@ page_products = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'products',
     :title => 'Products | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -109,8 +105,6 @@ page_applications = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'applications',
     :title => 'Applications | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -150,8 +144,6 @@ page_sales = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'sales',
     :title => 'Sales | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -188,8 +180,6 @@ page_support = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'support',
     :title => 'Support | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -418,8 +408,6 @@ page_partners = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'partners',
     :title => 'Partners | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -497,8 +485,6 @@ page_corporate = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'corporate',
     :title => 'Corporate | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -541,8 +527,6 @@ page_contact = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'contact',
     :title => 'Contact | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',
@@ -594,8 +578,6 @@ page_legal = CmsPage.create!({
   :cms_meta_attributes => {
     :url => 'legal',
     :title => 'Legal | Mainpine',
-    :description => 'default description',
-    :keywords => 'default keywords',
     :cms_contents_attributes => [
       {
         :status => 'published',

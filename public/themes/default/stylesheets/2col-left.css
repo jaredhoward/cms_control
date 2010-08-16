@@ -2,10 +2,12 @@ body, img, p, h1, h2, h3, h4 { margin: 0; padding: 0; }
 img { border: none; }
 .clearer { clear: both; }
 a { color: #003366; }
-a:hover { color: #0033ee; }
+a:hover { color: #0033EE; }
+a:visited { color:#4477AA; }
+a:active, a:visited:active { color:#CC0000; }
 
 .wrapper { color:#333333; font-family:Tahoma,Geneva,Arial,Helvetica,sans-serif; font-size: 8pt; line-height: 13pt; }
-.page { padding: 0 25px; width: 770px; background: transparent url(../images/main_bg.jpg) 0 0 no-repeat; }
+.page { padding: 0 28px; width: 770px; background: transparent url(../images/main_bg.jpg) 0 0 no-repeat; }
 .header { position: relative; margin-bottom: 35px; }
 .header h1.logo a { display: block; width: 153px; height: 55px; background: transparent url(../images/logo.gif) 0 0 no-repeat; text-indent: -99999px; margin: 0; padding: 0; }
 
@@ -35,7 +37,7 @@ a:hover { color: #0033ee; }
 .top-nav ul li.first a { background: transparent url(../images/nav_home_f2.gif) 0 0 no-repeat; border-top: none; padding-left: 15px; padding-top: 1px; }
 .top-nav ul li.active a { background-color: #ecf5fa; }
 
-.col-right h3 { background: transparent url(../images/panel_tl.gif) 0 0 no-repeat; height: 25px; line-height: 25px; padding-left: 20px; border-bottom: 1px solid #000; border-right: 1px solid #000; margin-bottom: 0; }
+.col-right h3 { background:url("../images/panel_tl.gif") no-repeat scroll 0 0 transparent; border-bottom:1px solid #000000; border-right:1px solid #000000; color:#004563; height:25px; line-height:25px; margin-bottom:0; padding-left:20px; }
 .col-right ul { border: 1px solid #000; border-top: none; margin-top: 0; padding: 10px 15px 10px 25px; }
 .col-right ul { -moz-border-radius-bottomright: 25px; -webkit-border-bottom-right-radius: 25px; }
 

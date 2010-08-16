@@ -6,11 +6,7 @@ class CmsController < ApplicationController
 
   def show
     if @meta && @meta.metaable.is_showable
-      @content_title = @meta.current_cms_content.title
-      @content = @meta.current_cms_content.content
-      @title = @meta.title
-      @keywords = @meta.keywords
-      @description = @meta.description
+      @cms_content = @meta.current_cms_content
     else
       render :text => 'No', :status => 404
     end
