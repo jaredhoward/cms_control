@@ -15,9 +15,12 @@ module AdminHelper
     elsif params[:action].include?('update') then 'Editing'
     else params[:action]
     end
-    
+
     return action + ' ' + item
   end
 
+  def required_tag
+    content_tag(:span, '*', :class => 'required', :title => 'This item is required')
+  end
 
 end

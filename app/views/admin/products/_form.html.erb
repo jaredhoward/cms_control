@@ -3,7 +3,7 @@
   <%= f.error_messages %>
 
   <div class="input">
-    <%= f.label :name, 'Name', :class => 'title' %>
+    <%= f.label :name, "Name#{required_tag}", :class => 'title' %>
     <div class="field"><%= f.text_field :name %></div>
   </div>
 <% f.fields_for :cms_meta do |builder| %>

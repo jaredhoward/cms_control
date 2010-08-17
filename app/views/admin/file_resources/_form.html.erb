@@ -3,11 +3,11 @@
   <%= f.error_messages %>
 
   <div class="input">
-    <%= f.label :name, 'Name', :class => 'title' %>
+    <%= f.label :name, "Name#{required_tag}", :class => 'title' %>
     <div class="field"><%= f.text_field :name %></div>
   </div>
   <div class="input">
-    <%= f.label :download_url, 'Download URL', :class => 'title' %>
+    <%= f.label :download_url, "Download URL#{required_tag}", :class => 'title' %>
     <div class="field"><%= f.text_field :download_url %></div>
   </div>
 
@@ -18,7 +18,7 @@
     <li id="current_release_link" class="first last" style="display:none"><%= link_to_function 'Current Release', "$('current_release_link').hide(); $('add_release_link').show(); $('add_release_input').hide(); $('current_release_input').show(); $('destroy_release').value='1';", :title => 'Select Current Release' %></li>
   </ul>
   <div id="current_release_input" class="input">
-    <%= f.label :current_release_id, 'Current Release', :class => 'title' %>
+    <%= f.label :current_release_id, "Current Release#{required_tag}", :class => 'title' %>
     <div class="field"><%= f.select :current_release_id, @file_resource.file_resource_releases.map{|r| [r.file, r.id]} %></div>
   </div>
 <% end -%>

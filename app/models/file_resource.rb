@@ -19,10 +19,6 @@ class FileResource < ActiveRecord::Base
   after_destroy :delete_save_folder
 
 
-  def is_showable
-    return true
-  end
-
   def save_folder_path
     unless defined?(@save_folder_path)
       @save_folder_path = File.join(RAILS_ROOT, 'file_resources', self.id.to_s)

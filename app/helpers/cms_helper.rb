@@ -34,8 +34,12 @@ module CmsHelper
   def block_for_product(product)
     items = ''
     product.file_resources.public_access.each do |file_resource|
-      # items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'download', :id => file_resource.id))
-      items << content_tag(:li, link_to(file_resource.name, :controller => 'cms', :action => 'show', :id => file_resource.cms_meta.id, :format => 'html'))
+      item = file_resource.name
+      item << content_tag(:br)
+      item << link_to('More Info', :controller => 'cms', :action => 'show', :id => file_resource.cms_meta.id, :format => 'html')
+      item << content_tag(:span, "|", :class => "separator")
+      item << link_to('Download', :controller => 'cms', :action => 'download', :id => file_resource.id)
+      items << content_tag(:li, item)
     end
 
     return content_tag(:h3, 'Related Files') + content_tag(:ul, items)

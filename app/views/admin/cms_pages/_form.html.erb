@@ -3,7 +3,7 @@
   <%= f.error_messages %>
 
   <div class="input">
-    <%= f.label :status, 'Status', :class => 'title' %>
+    <%= f.label :status, "Status#{required_tag}", :class => 'title' %>
     <div class="field">
       <%= f.select :status, CmsPage::STATUSES %>
     </div>

@@ -11,6 +11,10 @@ module CommonMetaable
     base.before_validation_on_create :associate_cms_meta_metaable_to_self
   end
 
+  def is_showable
+    true
+  end
+
 private
 
   def associate_cms_meta_metaable_to_self

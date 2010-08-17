@@ -1,14 +1,14 @@
 <h2>Page Information</h2>
 <div class="input">
-  <%= f.label :access, 'Access', :class => 'title' %>
+  <%= f.label :access, "Access#{required_tag}", :class => 'title' %>
   <div class="field"><%= f.select :access, CmsMeta::ACCESSES %></div>
 </div>
 <div class="input">
-  <%= f.label :url, 'URL', :class => 'title' %>
+  <%= f.label :url, "URL#{required_tag}", :class => 'title' %>
   <div class="field"><%= f.text_field :url %></div>
 </div>
 <div class="input">
-  <%= f.label :title, 'Title', :class => 'title' %>
+  <%= f.label :title, "Title#{required_tag}", :class => 'title' %>
   <div class="field"><%= f.text_field :title %></div>
 </div>
 <div class="input">
