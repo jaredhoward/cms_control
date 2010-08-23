@@ -489,28 +489,28 @@ page_corporate = CmsPage.create!({
       {
         :status => 'published',
         :title => 'Corporate Information',
-        :content => '<ul>
+        :content => '<ul class="content-top-links">
   <li><a href="/companyhistory.html">Company History</a></li>
   <li><a href="/headoffice.html">European Headquarters</a></li>
   <li><a href="/naoffice.html">North American Office</a></li>
 </ul>
 <h2>Mainpine in the News</h2>
 
-<ul>
-  <li>Aug 2007 &ndash; <a href="/downloads/PR101507_MSFax_.pdf" target="_blank">Mainpine&#8482; PCI Express&reg;  Certified with Microsoft&reg; SBS Fax Server</a></li>
-  <li>Aug 2007 &ndash; <a href="/corporate/press/2007/Mainpine-NextGen-Aug07.pdf" target="_blank">Mainpine&#8482; Intelligent Fax Boards Supported by NextGen&reg; EMR</a></li>
-  <li>May 2007 &ndash; <a href="/corporate/press/2007/PR_IQ-Express.pdf" target="_blank">Mainpine&trade; Announces World&rsquo;s Smallest PCI-Express Intelligent Fax Board</a></li>
-  <li>Sept 2006 &ndash; <a href="/corporate/press/2006/PR_Mainpine_RockForceIQ_090606_.pdf" target="_blank">Next generation RockForce IQ product line released</a></li>
-  <li>May 2006 &ndash; <a href="/corporate/press/2006/Move.pdf" target="_blank">Move to New Headquarters; Adds to Mgmt</a></li>
-  <li>Apr 2006 &ndash; <a href="/corporate/press/2006/Mainpine-Interbit-PR042406.pdf" target="_blank">Interbit Data  Supported by RockForce Boards </a></li>
-  <li>Mar 2006 &ndash; <a href="/corporate/press/2006/isvlab.html">Mainpine&trade; Announces Certification Lab for Fax Server Manufacturers </a></li>
-  <li>Mar 2006 &ndash; <a href="/corporate/press/2006/newpresident.html" target="_blank">Mainpine&trade; Announces Appointment of New President and CEO</a></li>
-  <li>Jan 2006 &ndash; <a href="/corporate/press/2006/recordyear.html">Mainpine Announces Record Sales for 2005</a></li>
-  <li>Jan 2006 &ndash; <a href="/newsarchive.html#EUenvDir">Mainpine Adopts EU Environmental Directives </a></li>
-  <li>Dec 2005 &ndash; <a href="/newsarchive.html#expEuroDist">Mainpine Expands European Distribution</a></li>
-  <li>Feb 2005 &ndash; <a href="/newsarchive.html#NAOffice">Mainpine announces opening of North American Office</a></li>
-  <li>Jul 2004 &ndash; <a href="/newsarchive.html#PCI3">Mainpine announces full compliance to the new PCI 3.0 specification for the RockForce range</a></li>
-  <li>Apr 2004 &ndash; <a href="/newsarchive.html#Agnicorp1">Agnicorp Inc. selects Mainpine Technology for the Ai-4400 Convergence Gateway</a></li>
+<ul class="news">
+  <li><label>Aug 2007 &ndash;</label> <a href="/downloads/PR101507_MSFax_.pdf" target="_blank">Mainpine&#8482; PCI Express&reg;  Certified with Microsoft&reg; SBS Fax Server</a></li>
+  <li><label>Aug 2007 &ndash;</label> <a href="/corporate/press/2007/Mainpine-NextGen-Aug07.pdf" target="_blank">Mainpine&#8482; Intelligent Fax Boards Supported by NextGen&reg; EMR</a></li>
+  <li><label>May 2007 &ndash;</label> <a href="/corporate/press/2007/PR_IQ-Express.pdf" target="_blank">Mainpine&trade; Announces World&rsquo;s Smallest PCI-Express Intelligent Fax Board</a></li>
+  <li><label>Sept 2006 &ndash;</label> <a href="/corporate/press/2006/PR_Mainpine_RockForceIQ_090606_.pdf" target="_blank">Next generation RockForce IQ product line released</a></li>
+  <li><label>May 2006 &ndash;</label> <a href="/corporate/press/2006/Move.pdf" target="_blank">Move to New Headquarters; Adds to Mgmt</a></li>
+  <li><label>Apr 2006 &ndash;</label> <a href="/corporate/press/2006/Mainpine-Interbit-PR042406.pdf" target="_blank">Interbit Data  Supported by RockForce Boards </a></li>
+  <li><label>Mar 2006 &ndash;</label> <a href="/corporate/press/2006/isvlab.html">Mainpine&trade; Announces Certification Lab for Fax Server Manufacturers </a></li>
+  <li><label>Mar 2006 &ndash;</label> <a href="/corporate/press/2006/newpresident.html" target="_blank">Mainpine&trade; Announces Appointment of New President and CEO</a></li>
+  <li><label>Jan 2006 &ndash;</label> <a href="/corporate/press/2006/recordyear.html">Mainpine Announces Record Sales for 2005</a></li>
+  <li><label>Jan 2006 &ndash;</label> <a href="/newsarchive.html#EUenvDir">Mainpine Adopts EU Environmental Directives </a></li>
+  <li><label>Dec 2005 &ndash;</label> <a href="/newsarchive.html#expEuroDist">Mainpine Expands European Distribution</a></li>
+  <li><label>Feb 2005 &ndash;</label> <a href="/newsarchive.html#NAOffice">Mainpine announces opening of North American Office</a></li>
+  <li><label>Jul 2004 &ndash;</label> <a href="/newsarchive.html#PCI3">Mainpine announces full compliance to the new PCI 3.0 specification for the RockForce range</a></li>
+  <li><label>Apr 2004 &ndash;</label> <a href="/newsarchive.html#Agnicorp1">Agnicorp Inc. selects Mainpine Technology for the Ai-4400 Convergence Gateway</a></li>
 </ul>
 <p><a href="/newsarchive.html"><strong>News Archive</strong></a></p>
 
