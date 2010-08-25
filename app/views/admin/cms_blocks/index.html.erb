@@ -13,7 +13,6 @@
       <div class="title"><%= link_to h(cms_block.title), edit_admin_cms_block_path(cms_block), :title => 'Edit Block' %></div>
       <div class="actions">
         <%= link_to 'Edit', edit_admin_cms_block_path(cms_block), :title => 'Edit Block' %>
-        <%= link_to 'Show', [:admin, cms_block], :title => 'View Block Content' %>
         <%= link_to 'Destroy', [:admin, cms_block], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Block' %>
       </div>
     </td>
