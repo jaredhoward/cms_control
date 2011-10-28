@@ -1,5 +1,4 @@
-Event.observe(window, 'scroll', function()
-{
+Event.observe(window, 'scroll', function(){
   if( window.XMLHttpRequest ) {
     if (document.documentElement.scrollTop > 100 || self.pageYOffset > 100) {
       $('floating-buttons').insert($('form-buttons-inner').remove());
@@ -9,5 +8,4 @@ Event.observe(window, 'scroll', function()
       $('form-buttons').insert($('form-buttons-inner').remove());
     }
   }
-}
-);
+});
