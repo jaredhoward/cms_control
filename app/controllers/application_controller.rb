@@ -5,10 +5,10 @@ protected
 
   def verify_access
     authenticate_or_request_with_http_basic("Mainpine Protected Area") do |username, password|
-      username == 'admin' && password == 'mainpine'
+      username == 'admin' && password == 'password'
     end
     # authenticate_or_request_with_http_digest("Mainpine Protected Area") do |username|
-    #   'mainpine' if username == 'admin'
+    #   'password' if username == 'admin'
     # end
   end
 
