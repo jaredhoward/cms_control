@@ -1,5 +1,5 @@
 class CreateFileResources < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :file_resources do |t|
       t.timestamps
       t.string :name, :download_url

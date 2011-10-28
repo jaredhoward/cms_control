@@ -1,5 +1,5 @@
 class CreateCategories < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :categories do |t|
       t.timestamps
       t.string :category_type, :name

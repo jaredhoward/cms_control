@@ -1,5 +1,5 @@
 class CreateCmsMetas < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :cms_metas do |t|
       t.timestamps
       t.string :metaable_type

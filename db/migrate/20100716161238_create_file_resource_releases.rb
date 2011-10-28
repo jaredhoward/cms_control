@@ -1,5 +1,5 @@
 class CreateFileResourceReleases < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :file_resource_releases do |t|
       t.timestamps
       t.integer :file_resource_id

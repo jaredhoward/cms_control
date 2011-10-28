@@ -1,5 +1,5 @@
 class CreateProducts < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :products do |t|
       t.timestamps
       t.string :name

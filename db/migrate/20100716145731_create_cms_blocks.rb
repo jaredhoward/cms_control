@@ -1,5 +1,5 @@
 class CreateCmsBlocks < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :cms_blocks do |t|
       t.timestamps
       t.integer :current_cms_content_id

@@ -1,5 +1,5 @@
 class CreateCmsContents < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :cms_contents do |t|
       t.datetime :created_at
       t.string :contentable_type
@@ -13,6 +13,8 @@ class CreateCmsContents < ActiveRecord::Migration
       t.index :status
     end
 
-    execute "ALTER TABLE `cms_contents` CHANGE COLUMN `content` `content` longtext"
+    if self.instance_variable_get(:@connection).instance_variable_get(:@config)[:adapter] =~ /^mysql/
+      execute "ALTER TABLE `cms_contents` CHANGE COLUMN `content` `content` longtext"
+    end
   end
 end

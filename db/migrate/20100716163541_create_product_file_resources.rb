@@ -1,5 +1,5 @@
 class CreateProductFileResources < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :product_file_resources do |t|
       t.timestamps
       t.integer :product_id, :file_resource_id, :category_id
