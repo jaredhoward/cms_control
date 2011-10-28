@@ -1,9 +1,9 @@
-log/*.log
-log/*.log.*
-tmp/**/*
-tmp/*
 .DS_Store
+.bundle
+config/database.yml
+db/*.sqlite3
 doc/api
 doc/app
-db/*.sqlite3
-config/database.yml
+log/*.log
+tmp/
+.sass-cache/

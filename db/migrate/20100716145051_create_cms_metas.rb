@@ -1,5 +1,5 @@
 class CreateCmsMetas < ActiveRecord::Migration
-  def self.up
+  def self.change
     create_table :cms_metas do |t|
       t.timestamps
       t.string :metaable_type
@@ -7,15 +7,12 @@ class CreateCmsMetas < ActiveRecord::Migration
       t.string :access, :url, :title
       t.integer :current_cms_content_id
       t.text :description, :keywords
-
+    end
+    change_table :cms_metas do |t|
       t.index [:metaable_type, :metaable_id]
       t.index :access
       t.index :url
       t.index :current_cms_content_id
     end
-  end
-
-  def self.down
-    drop_table :cms_metas
   end
 end

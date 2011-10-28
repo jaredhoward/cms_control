@@ -1,15 +1,12 @@
 class CreateCmsBlocks < ActiveRecord::Migration
-  def self.up
+  def self.change
     create_table :cms_blocks do |t|
       t.timestamps
       t.integer :current_cms_content_id
       t.string :title
-
+    end
+    change_table :cms_blocks do |t|
       t.index :current_cms_content_id
     end
-  end
-
-  def self.down
-    drop_table :cms_blocks
   end
 end

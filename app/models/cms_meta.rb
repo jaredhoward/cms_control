@@ -7,12 +7,15 @@ class CmsMeta < ActiveRecord::Base
 
   belongs_to :metaable, :polymorphic => true
 
-  validates_presence_of :metaable, :url, :title
-  validates_inclusion_of :metaable_type, :in => METAABLES
-  validates_inclusion_of :access, :in => ACCESSES
-  validates_uniqueness_of :url
+  validates :metaable, :presence => true
+  validates :metaable_type, :inclusion => {:in => METAABLES}
+  validates :url, :presence => true, :uniqueness => true
+  validates :title, :presence => true
+  validates :access, :inclusion => {:in => ACCESSES}
 
-  before_validation_on_create :set_access
+  before_validation(:on => :create) do
+    set_access
+  end
 
   def get_current
   end

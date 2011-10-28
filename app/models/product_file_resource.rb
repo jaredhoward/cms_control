@@ -3,6 +3,6 @@ class ProductFileResource < ActiveRecord::Base
   belongs_to :file_resource
   belongs_to :category
 
-  validates_presence_of :product_id, :file_resource_id
-  validates_uniqueness_of :file_resource_id, :scope => :product_id
+  validates :product_id, :presence => true
+  validates :file_resource_id, :presence => true, :uniqueness => {:scope => :product_id}
 end

@@ -4,11 +4,13 @@ class CmsContent < ActiveRecord::Base
 
   belongs_to :contentable, :polymorphic => true
 
-  validates_presence_of :contentable
-  validates_inclusion_of :status, :in => STATUSES
-  validates_inclusion_of :contentable_type, :in => CONTENTABLES
+  validates :contentable, :presence => true
+  validates :status, :inclusion => {:in => STATUSES}
+  validates :contentable_type, :inclusion => {:in => CONTENTABLES}
 
-  before_validation_on_create :set_status_to_published
+  before_validation(:on => :create) do
+    set_status_to_published
+  end
   after_create :insure_contentable_has_current
 
   def self.create_new_current_content(hash)

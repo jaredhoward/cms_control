@@ -3,8 +3,8 @@ class FileResourceRelease < ActiveRecord::Base
 
   belongs_to :file_resource
 
-  validates_presence_of :file_resource, :file
-  validates_uniqueness_of :file, :scope => :file_resource_id, :message => "name already exists. New release names must be unique.", :if => Proc.new {|r| !r.file_resource_id.nil? }
+  validates :file_resource, :presence => true
+  validates :file, :presence => true, :uniqueness => {:scope => :file_resource_id, :message => "name already exists. New release names must be unique.", :if => Proc.new {|r| !r.file_resource_id.nil? }}
 
   after_save :save_uploaded_file, :set_file_resource_current_release
   after_destroy :delete_save_file

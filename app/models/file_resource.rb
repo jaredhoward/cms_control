@@ -9,12 +9,14 @@ class FileResource < ActiveRecord::Base
   accepts_nested_attributes_for :file_resource_releases
   accepts_nested_attributes_for :product_file_resources, :allow_destroy => true
 
-  named_scope :name_order, :order => 'name ASC'
+  scope :name_order, order('name ASC')
 
-  validates_presence_of :name, :download_url
-  validates_uniqueness_of :name, :download_url
+  validates :name, :presence => true, :uniqueness => true
+  validates :download_url, :presence => true, :uniqueness => true
 
-  before_validation_on_create :associate_releases_to_self
+  before_validation(:on => :create) do
+    associate_releases_to_self
+  end
   after_create :assign_current_release
   after_destroy :delete_save_folder
 

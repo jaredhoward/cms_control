@@ -6,7 +6,9 @@ module CommonContentable
 
     base.accepts_nested_attributes_for :cms_contents, :allow_destroy => true
 
-    base.before_validation_on_create :associate_cms_contents_contentable_to_self
+    base.before_validation(:on => :create) do
+      associate_cms_contents_contentable_to_self
+    end
     # base.after_create :assign_current_cms_content
   end
 

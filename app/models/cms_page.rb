@@ -9,10 +9,10 @@ class CmsPage < ActiveRecord::Base
   has_many :cms_page_cms_blocks, :dependent => :destroy
   has_many :cms_blocks, :through => :cms_page_cms_blocks
 
-  named_scope :active_menu, :conditions => "menu_title IS NOT NULL", :order => 'sort ASC'
-  named_scope :published, :conditions => {:status => 'published'}
+  scope :active_menu, where("menu_title IS NOT NULL").order('sort ASC')
+  scope :published, where(:status => 'published')
 
-  validates_inclusion_of :status, :in => STATUSES
+  validates :status, :inclusion => {:in => STATUSES}
 
   def is_showable
     return self.status == 'published'

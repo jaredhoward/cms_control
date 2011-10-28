@@ -2,12 +2,15 @@ class CmsPageCmsBlock < ActiveRecord::Base
   belongs_to :cms_page
   belongs_to :cms_block
 
-  validates_presence_of :cms_page, :cms_block
-  validates_uniqueness_of :cms_block_id, :scope => :cms_page_id
+  validates :cms_page, :presence => true
+  validates :cms_block, :presence => true
+  validates :cms_block_id, :uniqueness => {:scope => :cms_page_id}
 
-  named_scope :by_sort, :order => 'sort ASC'
+  scope :by_sort, order('sort ASC')
 
-  before_validation_on_create :set_sorting
+  before_validation(:on => :create) do
+    set_sorting
+  end
 
 private
 

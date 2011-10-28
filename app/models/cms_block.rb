@@ -3,7 +3,7 @@ class CmsBlock < ActiveRecord::Base
 
   has_many :cms_page_cms_blocks, :dependent => :destroy
 
-  named_scope :title_order, :order => 'title ASC'
+  scope :title_order, order('title ASC')
 
-  validates_presence_of :title
+  validates :title, :presence => true
 end
