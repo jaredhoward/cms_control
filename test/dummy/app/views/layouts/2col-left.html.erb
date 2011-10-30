@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><%= yield(:title) || "Mainpine" %></title>
+  <meta name="description" content="<%= yield(:meta_description) || "Mainpine is a leading supplier of multi-port interface cards or modems for Fax, Voice and Data applications. This site contains product information, contact details and application notes." %>" />
+  <meta name="keywords" content="<%= yield(:meta_keywords) || "2 port, 4 port, 56K, 64K, 8 port, analog, analog connection, analogue, analogue connection, API, application development, Applications, basic rate, basic rate ISDN, Black Ice, BRI, broadcast, BroadFax, call centers, call control, Caller ID, callerid, CAPI, CID, Class 1, Class 1.0, Class 2, Class 2.0, COM Port, computer telephony, contact centers, convergence, CT, CTI, customer relationship management, data, debug, dial out, DID, digital dictation, digital logging, digital recording, dongle, DTMF, DUO, DUO+, E1, electronic communications, electronic messaging, fax, FaxBack, FAXmaker, fax adapter, fax board, fax card, fax server, Fax Over IP, FoIP, fractional PRI, fractional T1, Gateway, Gateways, GFI, ground start, HylaFAX, IdentaFone, iFAX, intelligent fax adapter, intelligent fax board, intelligent fax card, IP, IP network, IP telephony, internet telephony, ISDN, ISDN adapter, ISDN board, ISDN card, ISDN router, IVR, JBIG, JPEG, Linux, loop start, Mainpine, Media Processing Platform, Messaging, Microsoft Routing, Microsoft RRAS, Microsoft Shared Fax, modem, modem adapter, modem board, modem card, multiport, multi-port, multi port, multi user access, Net SatisFAXtion, network interfaces, OCTO, OCTO+, Open RAS, Open Remote Access, PABX, PCI, Platforms, POS, POTS, PRI, primary rate, primary rate ISDN, PSTN, Q.931, QoS, QUATRO, QUATRO+, Rainbow Software, RAS, RAS Server, remote dial-up, remote dial up, remote dial-in, remote LAN access, RockForce, Telephone Network Interface, robbed bit, RRAS, S/T interface, SDKs, Shared Fax, SideBand, Smart Port, Speech Recognition, ST, ST Interface, Switch, switching, T.30, T.38, TAPI, telecommunication, telephony, U interface, unified messaging, Unified Communications, Universal Port, V.17, V.21, V.22, V.23, V.27, V.29, V.32, V.34, V.42, V.44, V.90, V.92, VentaFax, Voice, voice board, Voice Over IP, VoIP, Windows 2000, Windows 2003, Win NT, Windows NT, Windows XP" %>" />
+  <meta name="robots" content="<%= yield(:meta_robots) || "INDEX,FOLLOW" %>" />
+  <%= stylesheet_link_tag 'application' %>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <div class="page">
+      <div class="header">
+        <h1 class="logo"><%= link_to 'MainPine', root_url %></a></h1>
+        <div class="top-nav">
+          <%= yield :nav_top %>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="col-main">
+          <h1><%= yield :page_header %></h1>
+          <div class="content">
+            <%= yield %>
+          </div>
+          <div class="content-footer">&nbsp;</div>
+        </div>
+        <div class="col-right">
+          <%= yield :col_right %>
+        </div>
+      </div>
+
+      <div class="footer-wrapper">
+        <div class="footer">
+          &copy; Mainpine 1997-2010 *<%= link_to('Legal information', send(:"cms_9_path", :format => 'html')) %>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <!-- END PAGE -->
+    <div class="clearer"></div>
+  </div>
+  <!-- END WRAPPER -->
+
+</body>
+</html>

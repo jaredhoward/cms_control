@@ -1,0 +1,26 @@
+<h2>Products</h2>
+<ul class="top-nav"><li class="first last add-new"><%= link_to("New Product", new_admin_product_path, :title => 'New') %></li></ul>
+<table class="list" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr class="first last">
+      <th class="first">Name</th>
+      <%= render 'titan_control/admin/cms_metas/shared_index_header' %>
+      <th class="last">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @products.each do |product| -%>
+    <tr>
+      <td class="first title">
+        <div class="title"><%= link_to h(product.name), edit_admin_product_path(product), :title => 'Edit Product' %></div>
+        <div class="actions">
+          <%= link_to 'Edit', edit_admin_product_path(product), :title => 'Edit Product' %>
+          <%= link_to 'Destroy', [:admin, product], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Product' %>
+        </div>
+      </td>
+      <%= render 'titan_control/admin/cms_metas/shared_index_item', :cms_meta => product.cms_meta %>
+      <td class="last"><%=h product.cms_meta.title %></td>
+    </tr>
+<% end -%>
+  </tbody>
+</table>

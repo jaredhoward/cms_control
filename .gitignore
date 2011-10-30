@@ -1,9 +1,7 @@
 .DS_Store
-.bundle
-config/database.yml
-db/*.sqlite3
-doc/api
-doc/app
+.bundle/
 log/*.log
-tmp/
-.sass-cache/
+pkg/
+test/dummy/db/*.sqlite3
+test/dummy/log/*.log
+test/dummy/tmp/

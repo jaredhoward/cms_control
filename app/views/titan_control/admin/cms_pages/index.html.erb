@@ -1,0 +1,28 @@
+<h1>Pages</h1>
+<ul class="top-nav"><li class="first last add-new"><%= link_to 'New Page', new_admin_cms_page_path, :title => 'Create New Page' %></li></ul>
+<table class="list" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr class="first last">
+      <th class="first">Title</th>
+      <%= render 'titan_control/admin/cms_metas/shared_index_header' %>
+      <th class="last">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @cms_pages.each do |cms_page| -%>
+    <tr>
+      <td class="first title">
+        <div class="title">
+          <%= link_to h(cms_page.cms_meta.title), edit_admin_cms_page_path(cms_page) %>
+        </div>
+        <div class="actions">
+          <%= link_to 'Edit', edit_admin_cms_page_path(cms_page), :title => 'Edit Page' %>
+          <%= link_to 'Destroy', [:admin, cms_page], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Page' %>
+        </div>
+      </td>
+      <%= render 'titan_control/admin/cms_metas/shared_index_item', :cms_meta => cms_page.cms_meta %>
+      <td class="last"><%= cms_page.status %></td>
+    </tr>
+<% end -%>
+  </tbody>
+</table>
