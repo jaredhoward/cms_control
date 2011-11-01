@@ -1,5 +1,5 @@
 module TitanControl
-  class CmsController < TitanControl::CMS_INHERITING_CLASS.constantize
+  class CmsController < Rails.application.config.titan_control.cms_inheriting_class.constantize
     before_filter :load_meta, :only => [:show]
     before_filter :load_file_resource, :only => [:download]
 

@@ -40,7 +40,7 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.titan_control.cms_inheriting_class = "::ApplicationController"
   end
 end
-
-TitanControl::CMS_INHERITING_CLASS = "::ApplicationController"
