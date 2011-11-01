@@ -1,15 +1,16 @@
 module TitanControl
   module ModelCommonality::Metaable
+    extend ActiveSupport::Concern
 
-    def self.included(base)
-      base.has_one :cms_meta, :as => :metaable, :class_name => 'TitanControl::CmsMeta', :dependent => :destroy
+    included do
+      has_one :cms_meta, :as => :metaable, :class_name => 'TitanControl::CmsMeta', :dependent => :destroy
 
-      base.scope :public_access, base.joins(:cms_meta).where(:titan_control_cms_metas => {:access => 'public'})
-      base.scope :meta_title_order, base.joins(:cms_meta).order('`titan_control_cms_metas`.`title` ASC')
+      scope :public_access, joins(:cms_meta).where(:titan_control_cms_metas => {:access => 'public'})
+      scope :meta_title_order, joins(:cms_meta).order('`titan_control_cms_metas`.`title` ASC')
 
-      base.accepts_nested_attributes_for :cms_meta
+      accepts_nested_attributes_for :cms_meta
 
-      base.before_validation(:on => :create) do
+      before_validation(:on => :create) do
         associate_cms_meta_metaable_to_self
       end
     end

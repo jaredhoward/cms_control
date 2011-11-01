@@ -1,9 +1,10 @@
 module TitanControl
   module ModelCommonality::RouteReload
+    extend ActiveSupport::Concern
 
-    def self.included(base)
-      base.after_save :reload_routes
-      base.after_destroy :reload_routes
+    included do
+      after_save :reload_routes
+      after_destroy :reload_routes
     end
 
     private

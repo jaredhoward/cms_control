@@ -1,16 +1,17 @@
 module TitanControl
   module ModelCommonality::Contentable
+    extend ActiveSupport::Concern
 
-    def self.included(base)
-      base.belongs_to :current_cms_content, :class_name => 'TitanControl::CmsContent'
-      base.has_many :cms_contents, :as => :contentable, :class_name => 'TitanControl::CmsContent', :dependent => :destroy
+    included do
+      belongs_to :current_cms_content, :class_name => 'TitanControl::CmsContent'
+      has_many :cms_contents, :as => :contentable, :class_name => 'TitanControl::CmsContent', :dependent => :destroy
 
-      base.accepts_nested_attributes_for :cms_contents, :allow_destroy => true
+      accepts_nested_attributes_for :cms_contents, :allow_destroy => true
 
-      base.before_validation(:on => :create) do
+      before_validation(:on => :create) do
         associate_cms_contents_contentable_to_self
       end
-      # base.after_create :assign_current_cms_content
+      # after_create :assign_current_cms_content
     end
 
     def cms_content=(hash)
