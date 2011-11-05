@@ -1,6 +1,6 @@
 module TitanControl
   class Category < ActiveRecord::Base
-    TYPES = ['TitanControl::CmsPage','TitanControl::ProductFileResource']
+    TYPES = ['TitanControl::CmsPage','ProductFileResource']
 
     has_many :cms_page_categories, :dependent => :destroy
     has_many :product_file_resources, :dependent => :nullify

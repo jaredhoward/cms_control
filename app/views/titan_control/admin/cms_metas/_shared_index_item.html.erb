@@ -2,6 +2,6 @@
 <td>
   <div><%=h cms_meta.url %></div>
   <div class="actions">
-    <%= link_to 'Show', url_for_meta(cms_meta), :popup => true, :class => 'last', :title => 'View in New Window' %>
+    <%= link_to 'Show', send(:"cms_#{cms_meta.id}_path"), :popup => true, :class => 'last', :title => 'View in New Window' %>
   </div>
 </td>

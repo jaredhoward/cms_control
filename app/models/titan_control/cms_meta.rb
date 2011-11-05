@@ -3,7 +3,7 @@ module TitanControl
     include TitanControl::ModelCommonality::Contentable
     include TitanControl::ModelCommonality::RouteReload
 
-    METAABLES = ['TitanControl::CmsPage','TitanControl::FileResource','TitanControl::Product']
+    METAABLES = ['TitanControl::CmsPage','FileResource','Product']
     ACCESSES = ['public','private'].freeze
 
     belongs_to :metaable, :polymorphic => true

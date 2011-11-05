@@ -49,7 +49,7 @@ page_products = TitanControl::CmsPage.create!({
   :status => 'published',
   :menu_title => 'Products',
   :cms_meta_attributes => {
-    :url => 'products',
+    :url => 'products.html',
     :title => 'Products | Mainpine',
     :cms_contents_attributes => [
       {
@@ -100,7 +100,7 @@ page_applications = TitanControl::CmsPage.create!({
   :status => 'published',
   :menu_title => 'Applications',
   :cms_meta_attributes => {
-    :url => 'applications',
+    :url => 'applications.html',
     :title => 'Applications | Mainpine',
     :cms_contents_attributes => [
       {
@@ -139,7 +139,7 @@ page_sales = TitanControl::CmsPage.create!({
   :status => 'published',
   :menu_title => 'Sales',
   :cms_meta_attributes => {
-    :url => 'sales',
+    :url => 'sales.html',
     :title => 'Sales | Mainpine',
     :cms_contents_attributes => [
       {
@@ -175,7 +175,7 @@ page_support = TitanControl::CmsPage.create!({
   :status => 'published',
   :menu_title => 'Support',
   :cms_meta_attributes => {
-    :url => 'support',
+    :url => 'support.html',
     :title => 'Support | Mainpine',
     :cms_contents_attributes => [
       {
@@ -403,7 +403,7 @@ page_partners = TitanControl::CmsPage.create!({
   :status => 'published',
   :menu_title => 'Partners',
   :cms_meta_attributes => {
-    :url => 'partners',
+    :url => 'partners.html',
     :title => 'Partners | Mainpine',
     :cms_contents_attributes => [
       {
@@ -1038,7 +1038,7 @@ page_whyv34.cms_blocks << block_whyv34_in_this_document
 page_software.cms_blocks << block_software_more_information
 page_software.cms_blocks << block_software_operating_systems
 
-product_iqe = TitanControl::Product.create!({
+product_iqe = Product.create!({
   :name => 'IQ Express',
   :cms_meta_attributes => {
     :url => 'products_IQE',
@@ -1120,7 +1120,7 @@ product_iqe = TitanControl::Product.create!({
   }
 })
 
-product_rockforce = TitanControl::Product.create!({
+product_rockforce = Product.create!({
   :name => 'RockForce',
   :cms_meta_attributes => {
     :url => 'products_rockforce',
@@ -1173,7 +1173,7 @@ product_rockforce = TitanControl::Product.create!({
   }
 })
 
-file_iqe_data_sheet = TitanControl::FileResource.create!({
+file_iqe_data_sheet = FileResource.create!({
   :name => 'IQ Express Data Sheet',
   :download_url => 'Mainpine_IQ_Express_Data_Sheet.pdf',
   :file_resource_releases_attributes => [
@@ -1194,7 +1194,7 @@ file_iqe_data_sheet = TitanControl::FileResource.create!({
   }
 })
 
-file_iqe_dimensions_inches = TitanControl::FileResource.create!({
+file_iqe_dimensions_inches = FileResource.create!({
   :name => 'IQ Dimensions - Inches',
   :download_url => 'IQDimensions-in.jpg',
   :file_resource_releases_attributes => [
@@ -1215,7 +1215,7 @@ file_iqe_dimensions_inches = TitanControl::FileResource.create!({
   }
 })
 
-file_iqe_dimensions_mm = TitanControl::FileResource.create!({
+file_iqe_dimensions_mm = FileResource.create!({
   :name => 'IQ Dimensions - Millimeters',
   :download_url => 'IQDimensions-mm.jpg',
   :file_resource_releases_attributes => [
@@ -1236,7 +1236,7 @@ file_iqe_dimensions_mm = TitanControl::FileResource.create!({
   }
 })
 
-file_iqe_rev3_win_driver = TitanControl::FileResource.create!({
+file_iqe_rev3_win_driver = FileResource.create!({
   :name => 'IQ Express Rev 3 Windows Driver',
   :download_url => 'iqe_rev3_win_driver.zip',
   :file_resource_releases_attributes => [
@@ -1257,7 +1257,7 @@ file_iqe_rev3_win_driver = TitanControl::FileResource.create!({
   }
 })
 
-file_iqe_rev1and2_win_driver = TitanControl::FileResource.create!({
+file_iqe_rev1and2_win_driver = FileResource.create!({
   :name => 'IQ Express Rev 1 and 2 Windows Driver',
   :download_url => 'iqe_rev1and2_win_driver.zip',
   :file_resource_releases_attributes => [
@@ -1278,7 +1278,7 @@ file_iqe_rev1and2_win_driver = TitanControl::FileResource.create!({
   }
 })
 
-file_rockforce_win_driver = TitanControl::FileResource.create!({
+file_rockforce_win_driver = FileResource.create!({
   :name => 'RockForce Rev 2.2 Windows Driver',
   :download_url => 'rockforce_win_driver.zip',
   :file_resource_releases_attributes => [
@@ -1300,23 +1300,23 @@ file_rockforce_win_driver = TitanControl::FileResource.create!({
 })
 
 category_productfileresource_driver = TitanControl::Category.create!({
-  :category_type => 'TitanControl::ProductFileResource',
+  :category_type => 'ProductFileResource',
   :name => 'Driver'
 })
 
-TitanControl::ProductFileResource.create!({
+ProductFileResource.create!({
   :product => product_iqe,
   :file_resource => file_iqe_rev3_win_driver,
   :category => category_productfileresource_driver
 })
 
-TitanControl::ProductFileResource.create!({
+ProductFileResource.create!({
   :product => product_iqe,
   :file_resource => file_iqe_rev1and2_win_driver,
   :category => category_productfileresource_driver
 })
 
-TitanControl::ProductFileResource.create!({
+ProductFileResource.create!({
   :product => product_rockforce,
   :file_resource => file_rockforce_win_driver,
   :category => category_productfileresource_driver

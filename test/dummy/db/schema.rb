@@ -11,7 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111029064621) do
+ActiveRecord::Schema.define(:version => 20111102060426) do
+
+  create_table "file_resource_releases", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "file_resource_id"
+    t.string   "file"
+  end
+
+  add_index "file_resource_releases", ["file_resource_id"], :name => "index_file_resource_releases_on_file_resource_id"
+
+  create_table "file_resources", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "download_url"
+    t.integer  "current_release_id"
+  end
+
+  add_index "file_resources", ["name"], :name => "index_file_resources_on_name"
+
+  create_table "product_file_resources", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "product_id"
+    t.integer  "file_resource_id"
+    t.integer  "category_id"
+  end
+
+  add_index "product_file_resources", ["category_id"], :name => "index_product_file_resources_on_category_id"
+  add_index "product_file_resources", ["file_resource_id"], :name => "index_product_file_resources_on_file_resource_id"
+  add_index "product_file_resources", ["product_id"], :name => "index_product_file_resources_on_product_id"
+
+  create_table "products", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "products", ["name"], :name => "index_products_on_name"
 
   create_table "titan_control_categories", :force => true do |t|
     t.datetime "created_at"
@@ -91,44 +130,5 @@ ActiveRecord::Schema.define(:version => 20111029064621) do
 
   add_index "titan_control_cms_pages", ["sort"], :name => "index_titan_control_cms_pages_on_sort"
   add_index "titan_control_cms_pages", ["status"], :name => "index_titan_control_cms_pages_on_status"
-
-  create_table "titan_control_file_resource_releases", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "file_resource_id"
-    t.string   "file"
-  end
-
-  add_index "titan_control_file_resource_releases", ["file_resource_id"], :name => "index_titan_control_file_resource_releases_on_file_resource_id"
-
-  create_table "titan_control_file_resources", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "download_url"
-    t.integer  "current_release_id"
-  end
-
-  add_index "titan_control_file_resources", ["name"], :name => "index_titan_control_file_resources_on_name"
-
-  create_table "titan_control_product_file_resources", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "product_id"
-    t.integer  "file_resource_id"
-    t.integer  "category_id"
-  end
-
-  add_index "titan_control_product_file_resources", ["category_id"], :name => "index_titan_control_product_file_resources_on_category_id"
-  add_index "titan_control_product_file_resources", ["file_resource_id"], :name => "index_titan_control_product_file_resources_on_file_resource_id"
-  add_index "titan_control_product_file_resources", ["product_id"], :name => "index_titan_control_product_file_resources_on_product_id"
-
-  create_table "titan_control_products", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-  end
-
-  add_index "titan_control_products", ["name"], :name => "index_titan_control_products_on_name"
 
 end
