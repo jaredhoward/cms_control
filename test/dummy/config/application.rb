@@ -41,6 +41,6 @@ module Dummy
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.titan_control.cms_inheriting_class = "::ApplicationController"
+    config.titan_control.cms_metaables.concat(['FileResource','Product'])
   end
 end

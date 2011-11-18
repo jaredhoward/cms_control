@@ -3,13 +3,12 @@ module TitanControl
     include TitanControl::ModelCommonality::Contentable
     include TitanControl::ModelCommonality::RouteReload
 
-    METAABLES = ['TitanControl::CmsPage','FileResource','Product']
     ACCESSES = ['public','private'].freeze
 
     belongs_to :metaable, :polymorphic => true
 
     validates :metaable, :presence => true
-    validates :metaable_type, :inclusion => {:in => METAABLES}
+    validates :metaable_type, :inclusion => {:in => Rails.application.config.titan_control.cms_metaables}
     validates :url, :presence => true, :uniqueness => true
     validates :title, :presence => true
     validates :access, :inclusion => {:in => ACCESSES}

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  mount TitanControl::Engine => "/"
+  # mount TitanControl::Engine => "/"
 
-  namespace :admin do
-    resources :file_resources, :except => [:show]
-    resources :products, :except => [:show]
-  end
+  # namespace :admin do
+  #   resources :file_resources, :except => [:show]
+  #   resources :products, :except => [:show]
+  # end
 
   # Dynamic Routes for Files
   FileResource.all.each do |file_resource|

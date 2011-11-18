@@ -2,6 +2,8 @@ module TitanControl
   module ModelCommonality::Metaable
     extend ActiveSupport::Concern
 
+    DEFAULT_METAABLES = ['TitanControl::CmsPage']
+
     included do
       has_one :cms_meta, :as => :metaable, :class_name => 'TitanControl::CmsMeta', :dependent => :destroy
 
