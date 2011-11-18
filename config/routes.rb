@@ -1,11 +1,11 @@
 TitanControl::Engine.routes.draw do
-  get 'admin' => 'admin#index'
-  namespace :admin do
-    resources :categories, :except => [:show]
-    resources :cms_blocks, :except => [:show]
-    resources :cms_pages, :except => [:show]
-  end
+  resources :categories, :except => [:show]
+  resources :cms_blocks, :except => [:show]
+  resources :cms_pages, :except => [:show]
+
+  root :to => 'dashboard#index'
 end
+
 Rails.application.routes.draw do
   # CMS Dynamic Routes
   TitanControl::CmsMeta.all.each do |cms|

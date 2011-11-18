@@ -20,5 +20,5 @@
   <div class="field"><%= f.text_field :keywords %></div>
 </div>
 <%= f.fields_for (f.object.new_record? ? :cms_contents : f.object.current_cms_content) do |builder| -%>
-  <%= render 'titan_control/admin/cms_contents/form_fields', :f => builder %>
+  <%= render 'titan_control/cms_contents/form_fields', :f => builder %>
 <% end -%>

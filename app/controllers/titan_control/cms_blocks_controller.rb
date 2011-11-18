@@ -1,5 +1,5 @@
 module TitanControl
-  class Admin::CmsBlocksController < Admin::BaseController
+  class CmsBlocksController < BaseController
     before_filter :load_cms_block, :only => [:edit, :update, :destroy]
 
     def index
@@ -14,7 +14,7 @@ module TitanControl
     def create
       @cms_block = CmsBlock.new(params[:cms_block])
       if @cms_block.save
-        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_block_url(@cms_block) : admin_cms_blocks_url), :notice => 'Block was successfully created.')
+        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_cms_block_url(@cms_block) : cms_blocks_url), :notice => 'Block was successfully created.')
       else
         render :new
       end
@@ -25,7 +25,7 @@ module TitanControl
 
     def update
       if @cms_block.update_attributes(params[:cms_block])
-        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_block_url(@cms_block) : admin_cms_blocks_url), :notice => 'Block was successfully updated.')
+        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_cms_block_url(@cms_block) : cms_blocks_url), :notice => 'Block was successfully updated.')
       else
         render :edit
       end
@@ -33,7 +33,7 @@ module TitanControl
 
     def destroy
       @cms_block.destroy
-      redirect_to(admin_cms_blocks_url, :notice => 'Block was deleted.')
+      redirect_to(cms_blocks_url, :notice => 'Block was deleted.')
     end
 
     protected

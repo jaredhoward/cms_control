@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # mount TitanControl::Engine => "/"
+  mount TitanControl::Engine => "admin"
 
   namespace :admin do
     resources :file_resources, :except => [:show]

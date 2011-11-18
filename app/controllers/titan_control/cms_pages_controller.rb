@@ -1,5 +1,5 @@
 module TitanControl
-  class Admin::CmsPagesController < Admin::BaseController
+  class CmsPagesController < BaseController
     before_filter :load_cms_page, :only => [:edit, :update, :destroy]
 
     def index
@@ -15,7 +15,7 @@ module TitanControl
     def create
       @cms_page = CmsPage.new(params[:cms_page])
       if @cms_page.save
-        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_page_url(@cms_page) : admin_cms_pages_url), :notice => 'Page was successfully created.')
+        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_cms_page_url(@cms_page) : cms_pages_url), :notice => 'Page was successfully created.')
       else
         render :new
       end
@@ -26,7 +26,7 @@ module TitanControl
 
     def update
       if @cms_page.update_attributes(params[:cms_page])
-        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_admin_cms_page_url(@cms_page) : admin_cms_pages_url), :notice => 'Page was successfully updated.')
+        redirect_to((params[:commit] == 'Save and Continue Edit' ? edit_cms_page_url(@cms_page) : cms_pages_url), :notice => 'Page was successfully updated.')
       else
         render :edit
       end
@@ -34,7 +34,7 @@ module TitanControl
 
     def destroy
       @cms_page.destroy
-      redirect_to(admin_cms_pages_url, :notice => 'Page was deleted.')
+      redirect_to(cms_pages_url, :notice => 'Page was deleted.')
     end
 
     protected

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title><%= h(yield(:title) || "#{controller.class.to_s}##{controller.action_name}") %></title>
-  <%= stylesheet_link_tag    "titan_control/admin/admin" %>
-  <%= javascript_include_tag "titan_control/admin/admin" %>
+  <%= stylesheet_link_tag    "titan_control/application" %>
+  <%= javascript_include_tag "titan_control/application" %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>
@@ -15,19 +15,19 @@
     <ul>
       <li class="container">Dashboard
         <ul>
-          <li class="first last"><%= link_to 'Dashboard', admin_url %></li>
+          <li class="first last"><%= link_to 'Dashboard', root_url %></li>
         </ul>
       </li>
       <li class="container">Pages
         <ul>
-          <li class="first"><%= link_to 'View', admin_cms_pages_url %></li>
-          <li class="last"><%= link_to 'New', new_admin_cms_page_url %></li>
+          <li class="first"><%= link_to 'View', cms_pages_url %></li>
+          <li class="last"><%= link_to 'New', new_cms_page_url %></li>
         </ul>
       </li>
       <li class="container">Blocks
         <ul>
-          <li class="first"><%= link_to 'View', admin_cms_blocks_url %></li>
-          <li class="last"><%= link_to 'New', new_admin_cms_block_url %></li>
+          <li class="first"><%= link_to 'View', cms_blocks_url %></li>
+          <li class="last"><%= link_to 'New', new_cms_block_url %></li>
         </ul>
       </li>
       <li class="container">Products

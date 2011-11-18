@@ -1,0 +1,7 @@
+<td><%= cms_meta.access %></td>
+<td>
+  <div><%=h cms_meta.url %></div>
+  <div class="actions">
+    <%= link_to 'Show', main_app.send(:"cms_#{cms_meta.id}_path"), :popup => true, :class => 'last', :title => 'View in New Window' %>
+  </div>
+</td>

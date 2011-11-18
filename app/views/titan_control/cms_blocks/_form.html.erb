@@ -1,5 +1,5 @@
-<%= form_for [:admin, @cms_block] do |f| %>
-  <%= render :partial => 'titan_control/admin/shared/form_buttons' %>
+<%= form_for @cms_block do |f| %>
+  <%= render :partial => 'titan_control/shared/form_buttons' %>
   <%= f.error_messages %>
 
   <div class="input">
@@ -7,6 +7,6 @@
     <div class="field"><%= f.text_field :title %></div>
   </div>
 <%=  f.fields_for f.object.new_record? ? :cms_contents : f.object.current_cms_content do |builder| -%>
-    <%= render 'titan_control/admin/cms_contents/form_fields', :f => builder %>
+    <%= render 'titan_control/cms_contents/form_fields', :f => builder %>
 <%   end -%>
 <% end %>

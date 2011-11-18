@@ -1,5 +1,5 @@
 module TitanControl
-  class AdminController < Admin::BaseController
+  class DashboardController < BaseController
 
     def index
     end
