@@ -1,11 +1,11 @@
-Event.observe(window, 'scroll', function(){
+$(window).scroll(function(){
   if( window.XMLHttpRequest ) {
     if (document.documentElement.scrollTop > 100 || self.pageYOffset > 100) {
-      $('floating-buttons').insert($('form-buttons-inner').remove());
-      $('floating-buttons').show();
+      $('#floating-buttons').append($('#form-buttons-inner').detach());
+      $('#floating-buttons').show();
     } else if (document.documentElement.scrollTop < 100 || self.pageYOffset < 100) {
-      $('floating-buttons').hide();
-      $('form-buttons').insert($('form-buttons-inner').remove());
+      $('#floating-buttons').hide();
+      $('#form-buttons').append($('#form-buttons-inner').detach());
     }
   }
 });
