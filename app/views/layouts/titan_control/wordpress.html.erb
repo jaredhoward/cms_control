@@ -12,37 +12,7 @@
 <div id="container">
   <div class="page-title"><h1>Administration</h1></div>
   <div class="menu">
-    <ul>
-      <li class="container">Dashboard
-        <ul>
-          <li class="first last"><%= link_to 'Dashboard', root_url %></li>
-        </ul>
-      </li>
-      <li class="container">Pages
-        <ul>
-          <li class="first"><%= link_to 'View', cms_pages_url %></li>
-          <li class="last"><%= link_to 'New', new_cms_page_url %></li>
-        </ul>
-      </li>
-      <li class="container">Blocks
-        <ul>
-          <li class="first"><%= link_to 'View', cms_blocks_url %></li>
-          <li class="last"><%= link_to 'New', new_cms_block_url %></li>
-        </ul>
-      </li>
-      <li class="container">Products
-        <ul>
-          <li class="first"><%# link_to 'View', admin_products_url %></li>
-          <li class="last"><%# link_to 'New', new_admin_product_url %></li>
-        </ul>
-      </li>
-      <li class="container">Files
-        <ul>
-          <li class="first"><%# link_to 'View', admin_file_resources_url %></li>
-          <li class="last"><%# link_to 'New', new_admin_file_resource_url %></li>
-        </ul>
-      </li>
-    </ul>
+    <%= admin_menu_items(TitanControl::AdminMenu) %>
   </div>
   <div class="content">
 <%- flash.each do |name, msg| -%>

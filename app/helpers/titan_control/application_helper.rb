@@ -24,5 +24,31 @@ module TitanControl
       content_tag(:span, '*', :class => 'required', :title => 'This item is required')
     end
 
+    def admin_menu_items(obj)
+      unless obj.items.empty?
+        items = []
+        obj.items_sorted.each do |item|
+          item_class = []
+          if item[1].items.empty?
+            item_class << 'first' if item == obj.items_sorted.first
+            item_class << 'last' if item == obj.items_sorted.last
+          else
+            item_class << 'container'
+          end
+
+          content = if item[1].url.present?
+            link_to(item[1].label, respond_to?(item[1].url) ? send(item[1].url) : main_app.send(item[1].url))
+          else
+            item[1].label
+          end
+          content << admin_menu_items(item[1]) unless item[1].items.empty?
+
+          items << content_tag(:li, content.html_safe, :class => item_class.join(' '))
+        end
+
+        content_tag(:ul, items.join("").html_safe)
+      end
+    end
+
   end
 end
