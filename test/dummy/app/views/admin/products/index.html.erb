@@ -4,7 +4,7 @@
   <thead>
     <tr class="first last">
       <th class="first">Name</th>
-      <%= render 'titan_control/admin/cms_metas/shared_index_header' %>
+      <%= render 'admin/cms_metas/shared_index_header' %>
       <th class="last">Title</th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
           <%= link_to 'Destroy', [:admin, product], :confirm => 'Are you sure?', :method => :delete, :class => 'last', :title => 'Delete Product' %>
         </div>
       </td>
-      <%= render 'titan_control/admin/cms_metas/shared_index_item', :cms_meta => product.cms_meta %>
+      <%= render 'admin/cms_metas/shared_index_item', :cms_meta => product.cms_meta %>
       <td class="last"><%=h product.cms_meta.title %></td>
     </tr>
 <% end -%>

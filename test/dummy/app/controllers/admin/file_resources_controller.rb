@@ -1,4 +1,4 @@
-class Admin::FileResourcesController < TitanControl::Admin::BaseController
+class Admin::FileResourcesController < Admin::BaseController
   before_filter :load_file_resource, :only => [:edit, :update, :destroy]
 
   def index

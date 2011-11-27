@@ -1,4 +1,4 @@
-class CmsController < Rails.application.config.titan_control.cms_inheriting_class.constantize
+class CmsController < ApplicationController
   before_filter :load_meta, :only => [:show]
 
   def show

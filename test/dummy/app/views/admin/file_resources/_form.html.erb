@@ -1,5 +1,5 @@
 <%= form_for [:admin, @file_resource], :html => {:multipart => true} do |f| %>
-  <%= render :partial => 'titan_control/admin/shared/form_buttons' %>
+  <%= render :partial => 'admin/shared/form_buttons' %>
   <%= f.error_messages %>
 
   <div class="input">
@@ -50,6 +50,6 @@
 <%   end -%>
 
 <%=  f.fields_for :cms_meta do |builder| -%>
-  <%= render 'titan_control/admin/cms_metas/form_fields', :f => builder %>
+  <%= render 'admin/cms_metas/form_fields', :f => builder %>
 <%   end -%>
 <% end %>

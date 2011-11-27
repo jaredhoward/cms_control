@@ -2,8 +2,8 @@
 <html>
 <head>
   <title><%= h(yield(:title) || "#{controller.class.to_s}##{controller.action_name}") %></title>
-  <%= stylesheet_link_tag    "titan_control/application" %>
-  <%= javascript_include_tag "titan_control/application" %>
+  <%= stylesheet_link_tag    "admin/dashboard" %>
+  <%= javascript_include_tag "admin/dashboard" %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>

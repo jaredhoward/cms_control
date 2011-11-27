@@ -1,12 +1,14 @@
-TitanControl::Engine.routes.draw do
-  resources :categories, :except => [:show]
-  resources :cms_blocks, :except => [:show]
-  resources :cms_pages, :except => [:show]
-
-  root :to => 'dashboard#index'
-end
+# TitanControl::Engine.routes.draw do
+# end
 
 Rails.application.routes.draw do
+  namespace :admin do
+    get '/' => 'dashboard#index', :as => :dashboard
+    resources :categories, :except => [:show]
+    resources :cms_blocks, :except => [:show]
+    resources :cms_pages, :except => [:show]
+  end
+
   # CMS Dynamic Routes
   TitanControl::CmsMeta.all.each do |cms|
     if cms.metaable.is_showable
