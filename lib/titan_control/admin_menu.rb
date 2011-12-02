@@ -42,10 +42,14 @@ module TitanControl
 
       def initialize(id, options={})
         @id = id
+        @items = {}
+        update_attributes(options)
+      end
+
+      def update_attributes(options={})
         @url = options.delete(:url)
         @label = options.delete(:label)
         @priority = options.delete(:priority) || 10
-        @items = {}
       end
 
       def id
@@ -57,7 +61,12 @@ module TitanControl
       end
 
       def item(id, options={}, &block)
-        item = Item.new(id, options)
+        item = items[id]
+        if item
+          item.update_attributes(options)
+        else
+          item = Item.new(id, options)
+        end
 
         if block_given?
           if block.arity == 1
@@ -76,6 +85,10 @@ module TitanControl
 
       def [](id)
         items[id]
+      end
+
+      def delete(id)
+        items.delete(id)
       end
 
     end
