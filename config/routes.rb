@@ -2,6 +2,8 @@
 # end
 
 Rails.application.routes.draw do
+  devise_for :users, :class_name => "TitanControl::User", :path_prefix => 'admin', :controllers => { :sessions => "admin/sessions", :passwords => "admin/passwords" }
+
   namespace :admin do
     get '/' => 'dashboard#index', :as => :dashboard
     resources :categories, :except => [:show]

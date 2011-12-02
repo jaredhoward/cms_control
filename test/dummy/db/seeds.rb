@@ -1,3 +1,6 @@
+# Create a default user
+TitanControl::User.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+
 ### CMS Pages ###
 
 page_home = TitanControl::CmsPage.create!({

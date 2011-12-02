@@ -8,6 +8,7 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 
+gem "devise", "~> 1.4.9"
 gem "dynamic_form"
 
 # Declare any dependencies that are still in development here instead of in

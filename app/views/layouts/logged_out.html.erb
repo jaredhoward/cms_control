@@ -7,23 +7,16 @@
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>
-<body>
+<body class="logged_out <%= controller.action_name %>">
 
 <div id="container">
   <div class="page-title"><h1>Administration</h1></div>
-<% if user_signed_in? -%>
-  <div class="user">
-    <p><%= current_user.email %></p>
-    <p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  </div>
-<% end -%>
-  <div class="menu">
-    <%= admin_menu_items(TitanControl::AdminMenu) %>
-  </div>
   <div class="content">
-<%- flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<%- end -%>
+<% if flash.keys.any? -%>
+<%   flash.each do |type, msg| -%>
+    <%= content_tag :div, msg, :class => "flash flash_#{type}" %>
+<%   end -%>
+<% end -%>
 
     <%= yield %>
   </div>
