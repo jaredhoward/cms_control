@@ -10,6 +10,7 @@ gem "jquery-rails"
 
 gem "devise", "~> 1.4.9"
 gem "dynamic_form"
+gem "simple_menu", :git => "git://github.com/jaredhoward/simple_menu.git"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
